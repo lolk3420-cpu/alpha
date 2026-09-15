@@ -1041,7 +1041,7 @@ body.modal-open {
     flex: 0 0 auto;
 }
 
-.bot-developer .workflow-grid {
+.bot-developer .workflow-grid-clean {
     display: flex;
     flex-direction: column;
     gap: 16px;
@@ -1050,35 +1050,69 @@ body.modal-open {
     position: relative;
 }
 
-.bot-developer .workflow-card {
+.bot-developer .workflow-step-card {
     display: flex;
     flex-direction: column;
     width: 100%;
-    padding: 20px;
     background-color: var(--bg-card-light);
     border-radius: 28px;
     box-shadow: var(--shadow-card);
     color: var(--text-card-light);
     box-sizing: border-box;
-    gap: 16px;
+    overflow: hidden;
     transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.2s cubic-bezier(0.2, 0.8, 0.2, 1);
 }
 
-.bot-developer .workflow-card:hover {
-    box-shadow: 0px 12px 32px rgba(0, 0, 0, 0.08);
+.bot-developer .workflow-step-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0px 14px 34px rgba(0, 0, 0, 0.12);
 }
 
-[data-theme="dark"] .bot-developer .workflow-card:hover {
-    box-shadow: 0px 12px 32px rgba(0, 0, 0, 0.25);
+[data-theme="dark"] .bot-developer .workflow-step-card:hover {
+    box-shadow: 0px 14px 34px rgba(0, 0, 0, 0.25);
 }
 
-.bot-developer .workflow-header {
+.bot-developer .step-image-wrapper {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+    background-color: var(--bg-primary);
+    border-bottom: 1px solid var(--bg-divider);
+    position: relative;
     display: flex;
-    align-items: flex-start;
-    gap: 12px;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
 }
 
-.bot-developer .workflow-number {
+.bot-developer .step-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.bot-developer .step-content {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    gap: 8px;
+}
+
+.bot-developer .step-title {
+    font-family: "Inter-Medium", Helvetica, sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+    color: var(--text-primary);
+    margin: 0;
+    line-height: 1.3;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: color 0.3s ease;
+}
+
+.bot-developer .step-title span {
     font-family: "Inter-Medium", Helvetica, sans-serif;
     font-size: 13px;
     font-weight: 500;
@@ -1087,501 +1121,14 @@ body.modal-open {
     padding: 4px 8px;
     border-radius: 8px;
     line-height: 1;
-    flex-shrink: 0;
-    margin-top: 2px;
     transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-.bot-developer .workflow-title-wrap {
-    display: flex;
-    flex-direction: column;
-    gap: 4px;
-    flex: 1;
-}
-
-.bot-developer .workflow-card-title {
-    font-family: "Inter-Medium", Helvetica, sans-serif;
-    font-size: 18px;
-    font-weight: 500;
-    color: var(--text-primary);
-    margin: 0;
-    line-height: 1.3;
-    transition: color 0.3s ease;
-}
-
-.bot-developer .workflow-card-desc {
+.bot-developer .step-desc {
     font-family: "Inter-Regular", Helvetica, sans-serif;
     font-size: 13px;
     line-height: 1.45;
     color: var(--text-secondary);
     margin: 0;
     transition: color 0.3s ease;
-}
-
-/* 16:9 Aspect Ratio Canvas */
-.bot-developer .workflow-visual.aspect-16-9 {
-    width: 100%;
-    aspect-ratio: 16 / 9;
-    border-radius: 18px;
-    overflow: hidden;
-    background-color: var(--bg-primary);
-    border: 1px solid var(--bg-divider);
-    position: relative;
-    display: flex;
-    align-items: stretch;
-    transition: background-color 0.3s ease, border-color 0.3s ease;
-    box-sizing: border-box;
-}
-
-.bot-developer .wf-visual-canvas {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    padding: 12px 14px;
-    box-sizing: border-box;
-    justify-content: space-between;
-    font-family: "Inter-Regular", Helvetica, sans-serif;
-}
-
-.bot-developer .wf-v-topbar {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    font-size: 11px;
-    color: var(--text-secondary);
-    border-bottom: 1px solid var(--bg-divider);
-    padding-bottom: 8px;
-    transition: border-color 0.3s ease;
-}
-
-.bot-developer .wf-v-dot {
-    width: 8px;
-    height: 8px;
-    border-radius: 50%;
-    display: inline-block;
-    flex-shrink: 0;
-}
-
-.bot-developer .wf-dot-green { background-color: #10b981; }
-.bot-developer .wf-dot-blue { background-color: #3b82f6; }
-.bot-developer .wf-dot-purple { background-color: #8b5cf6; }
-
-.bot-developer .wf-v-title {
-    font-family: "Inter-Medium", Helvetica, sans-serif;
-    font-weight: 500;
-    color: var(--text-primary);
-    flex: 1;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    transition: color 0.3s ease;
-}
-
-.bot-developer .wf-v-badge {
-    font-size: 10px;
-    padding: 2px 7px;
-    border-radius: 6px;
-    background-color: var(--bg-toggle);
-    color: var(--text-secondary);
-    font-weight: 500;
-    transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-.bot-developer .wf-badge-success {
-    background-color: rgba(16, 185, 129, 0.14);
-    color: #10b981;
-}
-
-.bot-developer .wf-v-body {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    gap: 6px;
-    padding-top: 6px;
-}
-
-/* Step 1: Dialog mockup */
-.bot-developer .wf-msg {
-    font-size: 11.5px;
-    padding: 7px 11px;
-    border-radius: 12px;
-    max-width: 92%;
-    line-height: 1.35;
-    box-sizing: border-box;
-}
-
-.bot-developer .wf-msg p {
-    margin: 0;
-}
-
-.bot-developer .wf-msg-user {
-    align-self: flex-start;
-    background-color: var(--bg-toggle);
-    color: var(--text-primary);
-    border-bottom-left-radius: 4px;
-    transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-.bot-developer .wf-msg-bot {
-    align-self: flex-end;
-    background-color: rgba(59, 130, 246, 0.08);
-    border: 1px solid rgba(59, 130, 246, 0.22);
-    color: var(--text-primary);
-    border-bottom-right-radius: 4px;
-    transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
-}
-
-[data-theme="dark"] .bot-developer .wf-msg-bot {
-    background-color: rgba(59, 130, 246, 0.16);
-    border-color: rgba(59, 130, 246, 0.35);
-}
-
-.bot-developer .wf-msg-title {
-    font-weight: 500;
-    font-size: 11px;
-    margin-bottom: 3px;
-    color: var(--text-primary);
-}
-
-.bot-developer .wf-checklist {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    flex-direction: column;
-    gap: 2px;
-    font-size: 10.5px;
-}
-
-.bot-developer .wf-check {
-    color: #10b981;
-    font-weight: 600;
-    margin-right: 3px;
-}
-
-/* Step 2: Contract terms grid */
-.bot-developer .wf-contract-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 6px;
-    height: 100%;
-    align-content: center;
-}
-
-.bot-developer .wf-contract-item {
-    display: flex;
-    align-items: center;
-    gap: 7px;
-    background-color: var(--bg-toggle);
-    padding: 6px 9px;
-    border-radius: 10px;
-    transition: background-color 0.3s ease;
-    box-sizing: border-box;
-}
-
-.bot-developer .wf-c-icon {
-    font-size: 15px;
-    flex-shrink: 0;
-}
-
-.bot-developer .wf-c-text {
-    display: flex;
-    flex-direction: column;
-    min-width: 0;
-}
-
-.bot-developer .wf-c-label {
-    font-size: 10.5px;
-    font-weight: 500;
-    color: var(--text-primary);
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    transition: color 0.3s ease;
-}
-
-.bot-developer .wf-c-val {
-    font-size: 9.5px;
-    color: var(--text-secondary);
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    transition: color 0.3s ease;
-}
-
-/* Step 3: Live Dev Feed */
-.bot-developer .wf-live-feed {
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-    justify-content: center;
-}
-
-.bot-developer .wf-feed-item {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    padding: 5px 9px;
-    border-radius: 8px;
-    background-color: var(--bg-toggle);
-    font-size: 11px;
-    transition: background-color 0.3s ease;
-}
-
-.bot-developer .wf-feed-status {
-    font-size: 9.5px;
-    font-weight: 500;
-    padding: 2px 6px;
-    border-radius: 5px;
-    flex-shrink: 0;
-}
-
-.bot-developer .wf-feed-item.done .wf-feed-status {
-    background-color: rgba(16, 185, 129, 0.14);
-    color: #10b981;
-}
-
-.bot-developer .wf-feed-item.live .wf-feed-status {
-    background-color: rgba(139, 92, 246, 0.18);
-    color: #8b5cf6;
-    font-weight: 600;
-}
-
-.bot-developer .wf-pulse {
-    animation: pulseDot 2s infinite ease-in-out;
-}
-
-.bot-developer .wf-feed-name {
-    flex: 1;
-    color: var(--text-primary);
-    font-size: 11px;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    transition: color 0.3s ease;
-}
-
-.bot-developer .wf-feed-time {
-    color: var(--text-secondary);
-    font-size: 10px;
-    flex-shrink: 0;
-    transition: color 0.3s ease;
-}
-
-/* Intermediate Interactive Element («Прикол») */
-.bot-developer .workflow-easter-egg {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    padding: 20px;
-    border-radius: 28px;
-    background: linear-gradient(135deg, rgba(74, 144, 226, 0.08) 0%, rgba(139, 92, 246, 0.08) 100%);
-    border: 1.5px dashed rgba(74, 144, 226, 0.38);
-    box-sizing: border-box;
-    gap: 14px;
-    transition: border-color 0.3s ease, background 0.3s ease, box-shadow 0.3s ease;
-}
-
-[data-theme="dark"] .bot-developer .workflow-easter-egg {
-    background: linear-gradient(135deg, rgba(74, 144, 226, 0.13) 0%, rgba(139, 92, 246, 0.13) 100%);
-    border-color: rgba(106, 171, 245, 0.45);
-}
-
-.bot-developer .wf-egg-header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-
-.bot-developer .wf-egg-pill {
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    background-color: var(--bg-card-light);
-    padding: 4px 10px;
-    border-radius: 999px;
-    font-size: 10.5px;
-    font-weight: 600;
-    letter-spacing: 0.5px;
-    color: var(--text-primary);
-    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-    transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-.bot-developer .wf-egg-pill-dot {
-    width: 6px;
-    height: 6px;
-    border-radius: 50%;
-    background-color: #ef4444;
-    animation: livePing 1.6s infinite;
-}
-
-.bot-developer .wf-egg-hint {
-    font-size: 11px;
-    color: var(--text-secondary);
-    transition: color 0.3s ease;
-}
-
-.bot-developer .wf-egg-content {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-}
-
-.bot-developer .wf-egg-title {
-    font-family: "Inter-Medium", Helvetica, sans-serif;
-    font-size: 16px;
-    font-weight: 500;
-    color: var(--text-primary);
-    margin: 0;
-    transition: color 0.3s ease;
-}
-
-.bot-developer .wf-egg-desc {
-    font-family: "Inter-Regular", Helvetica, sans-serif;
-    font-size: 13px;
-    line-height: 1.4;
-    color: var(--text-secondary);
-    margin: 0;
-    transition: color 0.3s ease;
-}
-
-.bot-developer .wf-egg-btn {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
-    width: 100%;
-    padding: 12px 18px;
-    border-radius: 16px;
-    background-color: var(--bg-callout);
-    color: var(--text-on-dark);
-    font-family: "Inter-Medium", Helvetica, sans-serif;
-    font-size: 13.5px;
-    font-weight: 500;
-    border: 1px solid var(--border-contact);
-    cursor: pointer;
-    transition: transform 0.2s ease, opacity 0.2s ease, background-color 0.3s ease, border-color 0.3s ease;
-    user-select: none;
-    -webkit-tap-highlight-color: transparent;
-    box-sizing: border-box;
-}
-
-.bot-developer .wf-egg-btn:hover {
-    opacity: 0.92;
-    transform: translateY(-1px);
-}
-
-.bot-developer .wf-egg-btn:active {
-    transform: scale(0.98);
-}
-
-.bot-developer .wf-egg-btn:disabled {
-    opacity: 0.6;
-    cursor: not-allowed;
-    transform: none;
-}
-
-.bot-developer .wf-egg-btn-icon {
-    width: 15px;
-    height: 15px;
-    stroke: currentColor;
-    flex-shrink: 0;
-}
-
-.bot-developer .wf-egg-console {
-    background-color: #0b0f19;
-    color: #a3e635;
-    font-family: "Consolas", "Courier New", monospace;
-    font-size: 11.5px;
-    padding: 10px 12px;
-    border-radius: 14px;
-    min-height: 48px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    gap: 4px;
-    line-height: 1.4;
-    overflow: hidden;
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    transition: background-color 0.3s ease, border-color 0.3s ease;
-}
-
-.bot-developer .wf-console-line {
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-}
-
-.bot-developer .wf-console-idle {
-    color: #64748b;
-    font-style: italic;
-}
-
-.bot-developer .wf-console-success {
-    color: #4ade80;
-    font-weight: 500;
-}
-
-.bot-developer .wf-console-active {
-    color: #38bdf8;
-}
-
-/* Step 4: Deploy & Delivery */
-.bot-developer .wf-deploy-grid {
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-    justify-content: center;
-    height: 100%;
-}
-
-.bot-developer .wf-deploy-item {
-    display: flex;
-    flex-direction: column;
-    gap: 2px;
-    padding: 6px 10px;
-    background-color: var(--bg-toggle);
-    border-radius: 10px;
-    transition: background-color 0.3s ease;
-}
-
-.bot-developer .wf-dep-top {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.bot-developer .wf-dep-code {
-    font-family: "Consolas", "Courier New", monospace;
-    font-size: 10.5px;
-    font-weight: 500;
-    color: var(--text-primary);
-    transition: color 0.3s ease;
-}
-
-.bot-developer .wf-dep-check {
-    color: #10b981;
-    font-size: 10.5px;
-    font-weight: 600;
-}
-
-.bot-developer .wf-dep-sub {
-    font-size: 9.5px;
-    color: var(--text-secondary);
-    transition: color 0.3s ease;
-}
-
-/* Animations */
-@keyframes livePing {
-    0% { transform: scale(1); opacity: 1; }
-    50% { transform: scale(1.35); opacity: 0.4; }
-    100% { transform: scale(1); opacity: 1; }
-}
-
-@keyframes pulseDot {
-    0%, 100% { opacity: 1; transform: scale(1); }
-    50% { opacity: 0.35; transform: scale(0.96); }
 }
