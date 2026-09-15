@@ -256,17 +256,18 @@
             disabledReason: "Сервер временно выключен"
         },
 
-        // Карточка №4 (Pulse AI)
+        // Карточка №4 (PosterBoy — мульти-бот система отложенного постинга в Forum Topics)
         4: {
-            title: "Pulse AI",
-            category: "Ассистент поддержки",
-            logo: "◉",
-            description: "Интеллектуальный AI-ассистент первой линии поддержки клиентов. Обучен по документации и базе знаний бизнеса, мгновенно отвечает на типовые запросы 24/7 и бесшовно подключает живого оператора при сложных случаях.",
-            tags: ["LLM", "RAG", "Python", "AI Support", "OpenAI"],
-            buttonText: "Протестировать",
-            buttonUrl: "https://t.me/example_pulse_bot",
-            disabled: false,
-            disabledReason: ""
+            title: "PosterBoy",
+            category: "Постинг · Forum Topics",
+            logoImg: "posterboy.jpg",
+            logo: "P",
+            description: "<p>Высокопроизводительная мульти‑бот система для создания и публикации постов в топиках форумов Telegram (адаптированный аналог Controller Bot): <a href=\"https://t.me/posterboy_bot\" target=\"_blank\" rel=\"noopener\" class=\"project-inline-link\">@posterboy_bot</a>. Разработана на чистом асинхронном FastAPI и Raw Telegram HTTP API без оверхеда фреймворков для мгновенной скорости отклика под высокими нагрузками.</p><ul class=\"modal-features-list\"><li><strong>Публикация в Forum Topics:</strong> таргетированный постинг в конкретные ветки и темы форумов с предпросмотром через copyMessage.</li><li><strong>Managed Bots (Секретари):</strong> автоматическое создание персональных ботов‑секретарей пользователей через BotFather (Telegram Bot API 9.6).</li><li><strong>Интерактивное оформление:</strong> поддержка inline URL‑кнопок, реакций и форматирования текста публикаций.</li><li><strong>UUID Webhook Routing:</strong> изолированная и безопасная маршрутизация входящих обновлений множества ботов по уникальным UUID с валидацией секретных токенов.</li><li><strong>Гибридная проверка подписки:</strong> моментальный контроль обязательной подписки на каналы через Redis‑кеш и фоновые события смены статуса chat_member.</li><li><strong>Экстремальная производительность:</strong> асинхронный стек на FastAPI + httpx + Redis FSM + SQLite в режиме WAL для параллельной обработки потоков апдейтов.</li></ul>",
+            tags: ["Python", "FastAPI", "Raw HTTP", "Redis", "SQLAlchemy 2.0", "SQLite WAL", "Httpx", "Uvicorn"],
+            buttonText: "Недоступен",
+            buttonUrl: "https://t.me/posterboy_bot",
+            disabled: true,
+            disabledReason: "Сервер временно выключен"
         }
     };
 
