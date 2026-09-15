@@ -1,0 +1,1029 @@
+/* ── Design Tokens ─────────────────────────────────────────────── */
+
+:root {
+    --bg-primary: #f5f5f3;
+    --bg-card-dark: #050505;
+    --bg-card-light: #ffffff;
+    --text-primary: #050505;
+    --text-secondary: #717171;
+    --text-on-dark: #ffffff;
+    --text-on-dark-secondary: #a3a3a3;
+    --text-card-light: #050505;
+    --text-card-light-secondary: #6c7278;
+    --bg-logo-alt: #050505;
+    --text-logo-alt: #ffffff;
+    --bg-toggle: #ececea;
+    --bg-divider: #dededc;
+    --icon-color: #050505;
+    --shadow-card: 0px 8px 28px rgba(0, 0, 0, 0.05);
+    --glow-contact: 0px 0px 32px 12px rgba(255, 255, 255, 0.93);
+    --bg-callout: #050505;
+    --border-contact: #ffffff;
+    --focus-ring: #4a90e2;
+}
+
+[data-theme="dark"] {
+    --bg-primary: #1a1a1a;
+    --bg-card-dark: #2a2a2a;
+    --bg-card-light: #2a2a2a;
+    --text-primary: #f0f0f0;
+    --text-secondary: #a0a0a0;
+    --text-on-dark: #f0f0f0;
+    --text-on-dark-secondary: #888888;
+    --text-card-light: #f0f0f0;
+    --text-card-light-secondary: #888888;
+    --bg-logo-alt: #444444;
+    --text-logo-alt: #f0f0f0;
+    --bg-toggle: #333333;
+    --bg-divider: #3a3a3a;
+    --icon-color: #f0f0f0;
+    --shadow-card: 0px 8px 28px rgba(0, 0, 0, 0.2);
+    --glow-contact: 0px 0px 32px 12px rgba(255, 255, 255, 0.15);
+    --bg-callout: #2a2a2a;
+    --border-contact: #555555;
+    --focus-ring: #6aabf5;
+}
+
+/* ── Root Container ───────────────────────────────────────────── */
+
+.bot-developer {
+    display: flex;
+    flex-direction: column;
+    min-height: 844px;
+    align-items: flex-start;
+    position: relative;
+    background-color: var(--bg-primary);
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.bot-developer .main-page-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 56px;
+    padding:
+        calc(24px + var(--tg-content-safe-top, 0px))
+        calc(24px + var(--tg-safe-right, 0px))
+        calc(54px + var(--tg-safe-bottom, 0px))
+        calc(24px + var(--tg-safe-left, 0px));
+    position: relative;
+    align-self: stretch;
+    width: 100%;
+    flex: 0 0 auto;
+}
+
+.bot-developer .introduction {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 36px;
+    position: relative;
+    align-self: stretch;
+    width: 100%;
+    flex: 0 0 auto;
+}
+
+.bot-developer .div {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    align-self: stretch;
+    width: 100%;
+    flex: 0 0 auto;
+}
+
+.bot-developer .theme-toggle {
+    display: flex;
+    flex-direction: column;
+    width: 40px;
+    height: 40px;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    background-color: var(--bg-toggle);
+    border-radius: 999px;
+    overflow: hidden;
+    transition: background-color 0.3s ease;
+}
+
+/* Theme toggle: sun/moon icons ─────────────────────────────── */
+
+.bot-developer .icon-moon,
+.bot-developer .icon-sun {
+    color: var(--text-primary);
+    transition: color 0.3s ease;
+}
+
+/* Light mode: show moon (click → dark), hide sun */
+.bot-developer .icon-sun {
+    display: none;
+}
+
+/* Dark mode: show sun (click → light), hide moon */
+[data-theme="dark"] .bot-developer .icon-sun {
+    display: block;
+}
+[data-theme="dark"] .bot-developer .icon-moon {
+    display: none;
+}
+
+.bot-developer .availability {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    position: relative;
+    flex: 0 0 auto;
+}
+
+.bot-developer .status {
+    position: relative;
+    width: 7px;
+    height: 7px;
+    background-color: var(--text-primary);
+    border-radius: 999px;
+    transition: background-color 0.3s ease;
+}
+
+.bot-developer .text-wrapper {
+    position: relative;
+    width: fit-content;
+    margin-top: -1px;
+    font-family: "Inter-Regular", Helvetica;
+    font-weight: 400;
+    color: var(--text-secondary);
+    font-size: 11px;
+    letter-spacing: 0;
+    line-height: normal;
+    white-space: nowrap;
+    transition: color 0.3s ease;
+}
+
+.bot-developer .index {
+    position: relative;
+    width: fit-content;
+    font-family: "Inter-Regular", Helvetica;
+    font-weight: 400;
+    color: var(--text-secondary);
+    font-size: 11px;
+    letter-spacing: 0;
+    line-height: normal;
+    white-space: nowrap;
+    transition: color 0.3s ease;
+}
+
+.bot-developer .hero-copy {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+    position: relative;
+    align-self: stretch;
+    width: 100%;
+    flex: 0 0 auto;
+}
+
+.bot-developer .eyebrow {
+    position: relative;
+    width: fit-content;
+    margin-top: -1px;
+    font-family: "Inter-Regular", Helvetica;
+    font-weight: 400;
+    color: var(--text-secondary);
+    font-size: 13px;
+    letter-spacing: 0;
+    line-height: normal;
+    transition: color 0.3s ease;
+}
+
+.bot-developer .headline {
+    position: relative;
+    align-self: stretch;
+    font-family: "Inter-Light", Helvetica;
+    font-weight: 300;
+    color: var(--text-primary);
+    font-size: 42px;
+    letter-spacing: -0.67px;
+    line-height: 44.1px;
+    transition: color 0.3s ease;
+}
+
+.bot-developer .p {
+    position: relative;
+    width: 100%;
+    max-width: 310px;
+    font-family: "Inter-Light", Helvetica;
+    font-weight: 300;
+    color: var(--text-secondary);
+    font-size: 15px;
+    letter-spacing: 0;
+    line-height: 23.2px;
+    transition: color 0.3s ease;
+}
+
+.bot-developer .projects {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+    position: relative;
+    align-self: stretch;
+    width: 100%;
+    flex: 0 0 auto;
+}
+
+.bot-developer .section-label {
+    position: relative;
+    width: fit-content;
+    margin-top: -1px;
+    font-family: "Inter-Medium", Helvetica;
+    font-weight: 500;
+    color: var(--text-secondary);
+    font-size: 11px;
+    letter-spacing: 0.18px;
+    line-height: normal;
+    white-space: nowrap;
+    transition: color 0.3s ease;
+}
+
+.bot-developer .project-grid {
+    flex-wrap: wrap;
+    align-items: flex-start;
+    gap: 16px 16px;
+    align-self: stretch;
+    width: 100%;
+    flex: 0 0 auto;
+    display: flex;
+    position: relative;
+}
+
+.bot-developer .project-card {
+    flex-direction: column;
+    width: calc((100% - 16px) / 2);
+    min-width: 0;
+    height: 218px;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding: 18px;
+    background-color: var(--bg-card-dark);
+    border-radius: 28px;
+    overflow: hidden;
+    box-shadow: var(--shadow-card);
+    display: flex;
+    position: relative;
+    color: var(--text-on-dark);
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.bot-developer .card-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    position: relative;
+    align-self: stretch;
+    width: 100%;
+    flex: 0 0 auto;
+}
+
+.bot-developer .project-logo {
+    flex-direction: column;
+    width: 64px;
+    height: 64px;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--bg-toggle);
+    border-radius: 20px;
+    overflow: hidden;
+    display: flex;
+    position: relative;
+    transition: background-color 0.3s ease;
+}
+
+.bot-developer .logo-mark {
+    position: relative;
+    width: fit-content;
+    font-family: "Inter-Medium", Helvetica;
+    font-weight: 500;
+    color: var(--text-primary);
+    font-size: 24px;
+    letter-spacing: 0;
+    line-height: normal;
+    transition: color 0.3s ease;
+}
+
+.bot-developer .vector-wrapper {
+    display: grid;
+    place-items: center;
+    width: 16px;
+    height: 16px;
+}
+
+.bot-developer .vector {
+    width: 12px;
+    height: 12px;
+    color: inherit;
+}
+
+.bot-developer .project-information {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 5px;
+    align-self: stretch;
+    width: 100%;
+    flex: 0 0 auto;
+    display: flex;
+    position: relative;
+}
+
+.bot-developer .title {
+    position: relative;
+    align-self: stretch;
+    margin-top: -1px;
+    font-family: "Inter-Medium", Helvetica;
+    font-weight: 500;
+    color: var(--text-on-dark);
+    font-size: 18px;
+    letter-spacing: 0;
+    line-height: normal;
+    transition: color 0.3s ease;
+}
+
+.bot-developer .category {
+    position: relative;
+    align-self: stretch;
+    font-family: "Inter-Regular", Helvetica;
+    font-weight: 400;
+    color: var(--text-on-dark-secondary);
+    font-size: 11px;
+    letter-spacing: 0;
+    line-height: 14.3px;
+    transition: color 0.3s ease;
+}
+
+.bot-developer .project-card-2 {
+    display: flex;
+    flex-direction: column;
+    width: calc((100% - 16px) / 2);
+    min-width: 0;
+    height: 218px;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding: 18px;
+    position: relative;
+    background-color: var(--bg-card-light);
+    border-radius: 28px;
+    overflow: hidden;
+    box-shadow: var(--shadow-card);
+    color: var(--text-card-light);
+    transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.2s cubic-bezier(0.2, 0.8, 0.2, 1);
+    cursor: pointer;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.bot-developer .project-card-2:hover {
+    transform: translateY(-3px);
+    box-shadow: 0px 14px 34px rgba(0, 0, 0, 0.12);
+}
+
+.bot-developer .project-card-2:active {
+    transform: scale(0.97);
+}
+
+.bot-developer .logo-mark-wrapper {
+    display: flex;
+    flex-direction: column;
+    width: 64px;
+    height: 64px;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    background-color: var(--bg-logo-alt);
+    border-radius: 20px;
+    overflow: hidden;
+    transition: background-color 0.3s ease;
+}
+
+.bot-developer .logo-mark-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.bot-developer .logo-mark-2 {
+    position: relative;
+    width: fit-content;
+    font-family: "Inter-Medium", Helvetica;
+    font-weight: 500;
+    color: var(--text-logo-alt);
+    font-size: 24px;
+    letter-spacing: 0;
+    line-height: normal;
+    transition: color 0.3s ease;
+}
+
+.bot-developer .img {
+    width: 12px;
+    height: 12px;
+    color: inherit;
+}
+
+.bot-developer .title-2 {
+    position: relative;
+    align-self: stretch;
+    margin-top: -1px;
+    font-family: "Inter-Medium", Helvetica;
+    font-weight: 500;
+    color: var(--text-card-light);
+    font-size: 18px;
+    letter-spacing: 0;
+    line-height: normal;
+    transition: color 0.3s ease;
+}
+
+.bot-developer .category-2 {
+    position: relative;
+    align-self: stretch;
+    font-family: "Inter-Regular", Helvetica;
+    font-weight: 400;
+    color: var(--text-card-light-secondary);
+    font-size: 11px;
+    letter-spacing: 0;
+    line-height: 14.3px;
+    transition: color 0.3s ease;
+}
+
+.bot-developer .FAQ {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+    position: relative;
+    align-self: stretch;
+    width: 100%;
+    flex: 0 0 auto;
+}
+
+.bot-developer .FAQ-item {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 14px;
+    padding: 19px 0px;
+    position: relative;
+    align-self: stretch;
+    width: 100%;
+    flex: 0 0 auto;
+}
+
+.bot-developer .question {
+    position: relative;
+    width: auto;
+    max-width: calc(100% - 32px);
+    margin-top: -1px;
+    font-family: "Inter-Regular", Helvetica;
+    font-weight: 400;
+    color: var(--text-primary);
+    font-size: 15px;
+    letter-spacing: 0;
+    line-height: normal;
+    transition: color 0.3s ease;
+}
+
+.bot-developer .vector-2 {
+    position: absolute;
+    width: 83.23%;
+    height: 54.06%;
+    top: 45.94%;
+    left: 16.77%;
+}
+
+.bot-developer .answer {
+    position: relative;
+    align-self: stretch;
+    font-family: "Inter-Regular", Helvetica;
+    font-weight: 400;
+    color: var(--text-secondary);
+    font-size: 13px;
+    letter-spacing: 0;
+    line-height: 20.1px;
+    transition: color 0.3s ease;
+}
+
+.bot-developer .divider {
+    position: relative;
+    align-self: stretch;
+    width: 100%;
+    height: 1px;
+    background-color: var(--bg-divider);
+    transition: background-color 0.3s ease;
+}
+
+.bot-developer .vector-3 {
+    position: absolute;
+    width: 83.23%;
+    height: 83.23%;
+    top: 16.77%;
+    left: 16.77%;
+}
+
+.bot-developer .contact-callout {
+    display: flex;
+    flex-direction: column;
+    height: 250px;
+    justify-content: center;
+    gap: 24px;
+    align-self: stretch;
+    width: 100%;
+    border-radius: 28px;
+    align-items: center;
+    position: relative;
+    background-color: var(--bg-callout);
+    overflow: hidden;
+    transition: background-color 0.3s ease;
+}
+
+.bot-developer .prompt {
+    position: relative;
+    width: 260px;
+    font-family: "Inter-Light", Helvetica;
+    font-weight: 300;
+    color: var(--text-on-dark);
+    font-size: 20px;
+    text-align: center;
+    letter-spacing: 0;
+    line-height: 26px;
+    transition: color 0.3s ease;
+}
+
+.bot-developer .contact-button {
+    display: inline-flex;
+    gap: 10px;
+    padding: 17px 34px 17px 60px;
+    flex: 0 0 auto;
+    border-radius: 999px;
+    border: 1px solid;
+    border-color: var(--border-contact);
+    box-shadow: var(--glow-contact);
+    align-items: center;
+    position: relative;
+    background-color: var(--bg-callout);
+    color: var(--text-on-dark);
+    overflow: hidden;
+    transition: background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease, color 0.3s ease;
+}
+
+.bot-developer .label {
+    position: relative;
+    width: fit-content;
+    font-family: "Inter-Medium", Helvetica;
+    font-weight: 500;
+    color: var(--text-on-dark);
+    font-size: 15px;
+    letter-spacing: 0;
+    line-height: 1;
+    white-space: nowrap;
+    transition: color 0.3s ease;
+}
+
+.bot-developer .vector-4 {
+    width: 12px;
+    height: 12px;
+    color: inherit;
+}
+
+/* Original stylesheet is injected above this refactor layer. */
+
+.bot-developer .theme-toggle {
+    padding: 0;
+    border: 0;
+    cursor: pointer;
+    font: inherit;
+}
+
+.bot-developer .project-card,
+.bot-developer .project-card-2 {
+    color: inherit;
+    text-decoration: none;
+}
+
+.bot-developer .project-card:focus-visible,
+.bot-developer .project-card-2:focus-visible,
+.bot-developer .contact-button:focus-visible,
+.bot-developer .theme-toggle:focus-visible,
+.bot-developer .FAQ-item>.div:focus-visible {
+    outline: 2px solid var(--focus-ring);
+    outline-offset: 3px;
+}
+
+.bot-developer .FAQ-item {
+    gap: 14px;
+}
+
+.bot-developer .FAQ-item>.div {
+    list-style: none;
+    cursor: pointer;
+}
+
+.bot-developer .FAQ-item>.div::-webkit-details-marker {
+    display: none;
+}
+
+.bot-developer .FAQ-item>.div .vector-wrapper {
+    display: grid;
+    place-items: center;
+}
+
+.bot-developer .FAQ-item>.div .vector-wrapper img,
+.bot-developer .FAQ-item>.div .vector-wrapper svg {
+    display: none;
+}
+
+.bot-developer .FAQ-item>.div .vector-wrapper::before {
+    color: var(--text-primary);
+    content: "+";
+    font-family: "Inter-Regular", Helvetica, sans-serif;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 16px;
+    transition: color 0.3s ease;
+}
+
+.bot-developer .FAQ-item[open]>.div .vector-wrapper::before {
+    content: "−";
+}
+
+.bot-developer .FAQ-item:not([open]) .answer {
+    display: none;
+}
+
+/* ── Project Modal (Bottom Sheet / Popup) ────────────────────────── */
+
+body.modal-open {
+    overflow: hidden !important;
+}
+
+.project-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    visibility: hidden;
+    opacity: 0;
+    pointer-events: none;
+    transition: visibility 0.25s ease, opacity 0.25s ease;
+}
+
+.project-modal.is-active {
+    visibility: visible;
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.project-modal .modal-backdrop {
+    position: absolute;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.55);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    transition: opacity 0.25s ease;
+}
+
+.project-modal .modal-dialog {
+    position: relative;
+    width: 100%;
+    max-width: 520px;
+    max-height: 85vh;
+    overflow-y: auto;
+    background-color: var(--bg-card-light);
+    color: var(--text-card-light);
+    border-top-left-radius: 28px;
+    border-top-right-radius: 28px;
+    border: 1px solid var(--bg-divider);
+    border-bottom: none;
+    box-shadow: 0 -12px 40px rgba(0, 0, 0, 0.22);
+    padding: 24px 20px calc(24px + var(--tg-safe-bottom, 0px)) 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    transform: translateY(100%);
+    transition: transform 0.32s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.3s ease, color 0.3s ease;
+    z-index: 1;
+}
+
+.project-modal.is-active .modal-dialog {
+    transform: translateY(0);
+}
+
+.project-modal .modal-close-btn {
+    position: absolute;
+    top: 18px;
+    right: 18px;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    border: none;
+    background-color: var(--bg-toggle);
+    color: var(--icon-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.15s ease;
+}
+
+.project-modal .modal-close-btn:hover {
+    transform: scale(1.08);
+}
+
+.project-modal .modal-close-btn:active {
+    transform: scale(0.92);
+}
+
+.project-modal .modal-header {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding-right: 44px;
+}
+
+.project-modal .modal-logo-wrapper {
+    width: 56px;
+    height: 56px;
+    border-radius: 18px;
+    background-color: var(--bg-logo-alt);
+    color: var(--text-logo-alt);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    overflow: hidden;
+}
+
+.project-modal .modal-logo-mark {
+    font-family: "Inter-Medium", Helvetica, sans-serif;
+    font-size: 22px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+}
+
+.project-modal .modal-logo-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    border-radius: 18px;
+}
+
+.project-modal .project-inline-link {
+    color: var(--text-card-light);
+    font-family: "Inter-Medium", Helvetica, sans-serif;
+    font-weight: 500;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    transition: opacity 0.2s ease, color 0.2s ease;
+}
+
+.project-modal .project-inline-link:hover {
+    opacity: 0.72;
+}
+
+.project-modal .modal-header-text {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.project-modal .modal-title {
+    margin: 0;
+    font-family: "Inter-Medium", Helvetica, sans-serif;
+    font-size: 20px;
+    font-weight: 500;
+    color: var(--text-card-light);
+    line-height: 1.25;
+    transition: color 0.3s ease;
+}
+
+.project-modal .modal-category {
+    margin: 0;
+    font-family: "Inter-Regular", Helvetica, sans-serif;
+    font-size: 13px;
+    color: var(--text-card-light-secondary);
+    transition: color 0.3s ease;
+}
+
+.project-modal .modal-body {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.project-modal .modal-section-label {
+    font-family: "Inter-Medium", Helvetica, sans-serif;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.2px;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    transition: color 0.3s ease;
+}
+
+.project-modal .modal-tags-label {
+    margin-top: 6px;
+}
+
+.project-modal .modal-description {
+    margin: 0;
+    font-family: "Inter-Light", Helvetica, sans-serif;
+    font-size: 14px;
+    line-height: 1.65;
+    color: var(--text-card-light);
+    transition: color 0.3s ease;
+}
+
+.project-modal .modal-description p {
+    margin: 0 0 10px 0;
+}
+
+.project-modal .modal-features-list {
+    margin: 8px 0 0 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+
+.project-modal .modal-features-list li {
+    position: relative;
+    padding-left: 16px;
+    font-size: 13.5px;
+    line-height: 1.5;
+    color: var(--text-card-light);
+}
+
+.project-modal .modal-features-list li::before {
+    content: "";
+    position: absolute;
+    left: 2px;
+    top: 8px;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background-color: var(--text-secondary);
+    opacity: 0.8;
+}
+
+.project-modal .modal-features-list li strong {
+    font-family: "Inter-Medium", Helvetica, sans-serif;
+    font-weight: 500;
+    color: var(--text-card-light);
+}
+
+.project-modal .modal-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.project-modal .modal-tag {
+    display: inline-flex;
+    align-items: center;
+    padding: 6px 12px;
+    border-radius: 10px;
+    background-color: var(--bg-toggle);
+    color: var(--text-secondary);
+    font-family: "Inter-Medium", Helvetica, sans-serif;
+    font-size: 12px;
+    font-weight: 500;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.project-modal .modal-footer {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 4px;
+    width: 100%;
+}
+
+/* Apple-style Warning Notice (iOS Callout) */
+.project-modal .modal-disabled-notice {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 14px;
+    border-radius: 14px;
+    font-family: "Inter-Regular", Helvetica, sans-serif;
+    font-size: 13px;
+    line-height: 1.4;
+    background-color: rgba(245, 158, 11, 0.12);
+    color: #92400e;
+    border: 1px solid rgba(245, 158, 11, 0.28);
+    box-sizing: border-box;
+    transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+}
+
+[data-theme="dark"] .project-modal .modal-disabled-notice {
+    background-color: rgba(255, 184, 0, 0.14);
+    color: #fbbf24;
+    border-color: rgba(255, 184, 0, 0.32);
+}
+
+.project-modal .modal-notice-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 18px;
+    height: 18px;
+    flex-shrink: 0;
+}
+
+.project-modal .modal-notice-svg {
+    width: 16px;
+    height: 16px;
+    display: block;
+}
+
+.project-modal .modal-notice-text {
+    flex: 1;
+    font-weight: 500;
+}
+
+.project-modal .modal-action-btn {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px 20px;
+    border-radius: 16px;
+    background-color: var(--bg-callout);
+    color: var(--text-on-dark);
+    font-family: "Inter-Medium", Helvetica, sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    text-decoration: none;
+    border: 1px solid var(--border-contact);
+    transition: transform 0.2s ease, opacity 0.2s ease, background-color 0.3s ease, border-color 0.3s ease;
+    box-sizing: border-box;
+}
+
+.project-modal .modal-action-btn:hover {
+    opacity: 0.92;
+    transform: translateY(-1px);
+}
+
+.project-modal .modal-action-btn:active {
+    transform: translateY(0);
+}
+
+/* Disabled State (Apple Gray) */
+.project-modal .modal-action-btn.is-disabled {
+    background-color: #e5e5ea;
+    color: #8e8e93;
+    border-color: transparent;
+    cursor: not-allowed;
+    pointer-events: none;
+    box-shadow: none;
+    transform: none !important;
+}
+
+[data-theme="dark"] .project-modal .modal-action-btn.is-disabled {
+    background-color: #333333;
+    color: #7c7c80;
+    border-color: transparent;
+}
+
+.project-modal .modal-action-btn.is-disabled .modal-btn-icon {
+    opacity: 0.35;
+}
+
+.project-modal .modal-btn-icon {
+    width: 16px;
+    height: 16px;
+    stroke: currentColor;
+}
+
+@media (min-width: 600px) {
+    .project-modal {
+        align-items: center;
+        padding: 24px;
+    }
+    .project-modal .modal-dialog {
+        border-radius: 28px;
+        border-bottom: 1px solid var(--bg-divider);
+        transform: translateY(24px) scale(0.96);
+        padding-bottom: 24px;
+    }
+    .project-modal.is-active .modal-dialog {
+        transform: translateY(0) scale(1);
+    }
+}

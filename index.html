@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+    <link rel="stylesheet" href="globals.css">
+    <link rel="stylesheet" href="style.css">
+    <title>Bot Developer — Product Builder</title>
+</head>
+
+<body>
+    <div class="bot-developer">
+        <main class="main-page-content">
+            <section class="introduction" aria-labelledby="hero-title">
+                <div class="div">
+                    <button class="theme-toggle" type="button" aria-label="Переключить цветовую тему"
+                        aria-pressed="false">
+                        <svg class="icon-moon" aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+                        </svg>
+                        <svg class="icon-sun" aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="5"/>
+                            <line x1="12" y1="1" x2="12" y2="3"/>
+                            <line x1="12" y1="21" x2="12" y2="23"/>
+                            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/>
+                            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+                            <line x1="1" y1="12" x2="3" y2="12"/>
+                            <line x1="21" y1="12" x2="23" y2="12"/>
+                            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/>
+                            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+                        </svg>
+                    </button>
+                    <p class="availability" aria-label="Доступен для работы">
+                        <span class="status" aria-hidden="true"></span>
+                        <span class="text-wrapper">ДОСТУПЕН ДЛЯ РАБОТЫ</span>
+                    </p>
+                </div>
+                <div class="hero-copy">
+                    <p class="eyebrow">БОТ‑РАЗРАБОТЧИК / СОЗДАТЕЛЬ ПРОДУКТОВ</p>
+                    <h1 class="headline" id="hero-title">Создаю ботов, которые работают на бизнес.</h1>
+                    <p class="p">Проектирую понятные Telegram‑продукты - от первой идеи до стабильного запуска.</p>
+                </div>
+            </section>
+            <section class="projects" aria-labelledby="projects-title">
+                <div class="div">
+                    <h2 class="section-label" id="projects-title">ИЗБРАННЫЕ ПРОЕКТЫ</h2>
+                </div>
+                <div class="project-grid">
+                    <a class="project-card-2" href="#" data-project="1" aria-label="Проект ModerGod — Модерация, Telegram">
+                        <div class="card-header">
+                            <div class="logo-mark-wrapper" aria-hidden="true">
+                                <span class="logo-mark-2">M</span>
+                            </div>
+                            <span class="vector-wrapper" aria-hidden="true">
+                                <svg class="vector" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M4 12L12 4M12 4H6M12 4V10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </span>
+                        </div>
+                        <div class="project-information">
+                            <h3 class="title-2">ModerGod</h3>
+                            <p class="category-2">Модерация · Telegram</p>
+                        </div>
+                    </a>
+                    <a class="project-card-2" href="#" data-project="2" aria-label="Проект Marinera — Парсинг, Lead Generation">
+                        <div class="card-header">
+                            <div class="logo-mark-wrapper" aria-hidden="true">
+                                <img class="logo-mark-img" src="marinera.jpg" alt="Marinera logo" />
+                            </div>
+                            <span class="vector-wrapper" aria-hidden="true">
+                                <svg class="img" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M4 12L12 4M12 4H6M12 4V10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </span>
+                        </div>
+                        <div class="project-information">
+                            <h3 class="title-2">Marinera</h3>
+                            <p class="category-2">Парсинг · Lead Generation</p>
+                        </div>
+                    </a>
+                    <a class="project-card-2" href="#" data-project="3" aria-label="Проект Paywall — Подписки">
+                        <div class="card-header">
+                            <div class="logo-mark-wrapper" aria-hidden="true">
+                                <span class="logo-mark-2">P</span>
+                            </div>
+                            <span class="vector-wrapper" aria-hidden="true">
+                                <svg class="vector" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M4 12L12 4M12 4H6M12 4V10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </span>
+                        </div>
+                        <div class="project-information">
+                            <h3 class="title-2">Paywall</h3>
+                            <p class="category-2">Подписки</p>
+                        </div>
+                    </a>
+                    <a class="project-card-2" href="#" data-project="4" aria-label="Проект Pulse AI — Ассистент поддержки">
+                        <div class="card-header">
+                            <div class="logo-mark-wrapper" aria-hidden="true">
+                                <span class="logo-mark-2">◉</span>
+                            </div>
+                            <span class="vector-wrapper" aria-hidden="true">
+                                <svg class="img" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M4 12L12 4M12 4H6M12 4V10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </span>
+                        </div>
+                        <div class="project-information">
+                            <h3 class="title-2">Pulse AI</h3>
+                            <p class="category-2">Ассистент поддержки</p>
+                        </div>
+                    </a>
+                </div>
+            </section>
+            <section class="FAQ" aria-labelledby="faq-title">
+                <h2 class="section-label" id="faq-title">FAQ</h2>
+                <details class="FAQ-item" open>
+                    <summary class="div">
+                        <span class="question">Как обеспечивается безопасность?</span>
+                        <span class="vector-wrapper" aria-hidden="true">
+                            <svg class="vector-2" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M4 6L8 10L12 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </span>
+                    </summary>
+                    <p class="answer">Каждый проект получает изолированное окружение, минимальные права доступа и аудит
+                        чувствительных сценариев.</p>
+                    <div class="divider" aria-hidden="true"></div>
+                </details>
+                <details class="FAQ-item">
+                    <summary class="div">
+                        <span class="question">Кому принадлежит код?</span>
+                        <span class="vector-wrapper" aria-hidden="true">
+                            <svg class="vector-3" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M4 4L12 12M4 12L12 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </span>
+                    </summary>
+                    <div class="divider" aria-hidden="true"></div>
+                </details>
+                <details class="FAQ-item">
+                    <summary class="div">
+                        <span class="question">Сколько занимает запуск?</span>
+                        <span class="vector-wrapper" aria-hidden="true">
+                            <svg class="vector-3" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M4 4L12 12M4 12L12 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </span>
+                    </summary>
+                    <div class="divider" aria-hidden="true"></div>
+                </details>
+                <details class="FAQ-item">
+                    <summary class="div">
+                        <span class="question">Поддерживаете проект после запуска?</span>
+                        <span class="vector-wrapper" aria-hidden="true">
+                            <svg class="vector-3" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M4 4L12 12M4 12L12 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </span>
+                    </summary>
+                    <div class="divider" aria-hidden="true"></div>
+                </details>
+            </section>
+            <section class="contact-callout" aria-labelledby="contact-title">
+                <h2 class="prompt" id="contact-title">Есть идея для следующего проекта?</h2>
+                <a class="contact-button" href="mailto:hello@example.com" aria-label="Связаться по электронной почте">
+                    <span class="label">Связаться</span>
+                    <span class="vector-wrapper" aria-hidden="true">
+                        <svg class="vector-4" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M4 12L12 4M12 4H6M12 4V10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </span>
+                </a>
+            </section>
+        </main>
+
+        <!-- Модальное окно деталей проекта -->
+        <div id="project-modal" class="project-modal" aria-hidden="true" role="dialog" aria-modal="true">
+            <div class="modal-backdrop" data-close-modal></div>
+            <div class="modal-dialog">
+                <button class="modal-close-btn" type="button" aria-label="Закрыть" data-close-modal>
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="18" y1="6" x2="6" y2="18"></line>
+                        <line x1="6" y1="6" x2="18" y2="18"></line>
+                    </svg>
+                </button>
+                <div class="modal-header">
+                    <div class="modal-logo-wrapper">
+                        <span class="modal-logo-mark" id="modal-logo">G</span>
+                    </div>
+                    <div class="modal-header-text">
+                        <h3 class="modal-title" id="modal-title">Guard Bot</h3>
+                        <p class="modal-category" id="modal-category">Безопасность · Telegram</p>
+                    </div>
+                </div>
+                <div class="modal-body">
+                    <div class="modal-section-label">О ПРОЕКТЕ</div>
+                    <p class="modal-description" id="modal-description"></p>
+                    <div class="modal-section-label modal-tags-label" id="modal-tags-heading">СТЕК И ВОЗМОЖНОСТИ</div>
+                    <div class="modal-tags" id="modal-tags"></div>
+                </div>
+                <div class="modal-footer" id="modal-footer">
+                    <div class="modal-disabled-notice" id="modal-disabled-notice" style="display: none;">
+                        <span class="modal-notice-icon" aria-hidden="true">
+                            <svg class="modal-notice-svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M10.286 3.86a2 2 0 013.428 0l8.113 14.198A2 2 0 0120.113 21H3.887a2 2 0 01-1.714-2.942L10.286 3.86zM12 9a1 1 0 00-1 1v4a1 1 0 102 0v-4a1 1 0 00-1-1zm0 8a1.25 1.25 0 100-2.5 1.25 1.25 0 000 2.5z"/>
+                            </svg>
+                        </span>
+                        <span class="modal-notice-text" id="modal-notice-text"></span>
+                    </div>
+                    <a class="modal-action-btn" id="modal-action-btn" href="#" target="_blank" rel="noopener">
+                        <span id="modal-btn-text">Открыть проект</span>
+                        <svg class="modal-btn-icon" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M4 12L12 4M12 4H6M12 4V10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+
+</html>
