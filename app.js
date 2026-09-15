@@ -242,17 +242,18 @@
             disabledReason: "Недоступно: частный проект"
         },
 
-        // Карточка №3 (Paywall)
+        // Карточка №3 (Tap2Sell — платформа автоматизированных продаж в Telegram)
         3: {
-            title: "Paywall",
-            category: "Подписки",
-            logo: "P",
-            description: "Платформа монетизации закрытых каналов и чатов по модели подписки. Автоматический приём платежей (Telegram Stars, банковские карты, криптовалюта), регулярные списания, напоминания об окончании доступа и автокик.",
-            tags: ["Платежи", "Telegram Stars", "Webhooks", "Автоподписка"],
-            buttonText: "Подробнее",
-            buttonUrl: "https://t.me/example_paywall_bot",
-            disabled: false,
-            disabledReason: ""
+            title: "Tap2Sell",
+            category: "E-commerce · Конструктор ботов",
+            logoImg: "tap2sell.jpg",
+            logo: "T",
+            description: "<p>SaaS‑платформа и no‑code конструктор автоматизированных магазинов в Telegram на Python, aiogram 3 и FastAPI: <a href=\"https://t.me/tap2sell_bot\" target=\"_blank\" rel=\"noopener\" class=\"project-inline-link\">@tap2sell_bot</a>. Архитектура «Master‑Vassal» позволяет пользователям запускать и администрировать собственных автономных ботов‑магазинов без навыков программирования и стороннего хостинга.</p><ul class=\"modal-features-list\"><li><strong>Master-Vassal архитектура:</strong> мастер-бот для регистрации, управления тарифами и создания неограниченного числа ботов-магазинов по API-токену.</li><li><strong>Три формата товаров:</strong> моментальная выдача инфопродуктов (PDF, видео, архивы), платный доступ в закрытые каналы/группы по одноразовым инвайт-ссылкам и марафоны с пошаговой отправкой уроков.</li><li><strong>Встроенная /admin панель:</strong> полное управление витриной, добавление категорий, цен и контента прямо через клавиатуры внутри самого бота-вассала.</li><li><strong>Мульти-эквайринг:</strong> прием платежей через LavaTop (банковские карты РФ/мир, Apple Pay) и CryptoBot (USDT, TON) с моментальной обработкой вебхуков на FastAPI.</li><li><strong>Фоновые очереди и расписания:</strong> интеграция APScheduler для автоматической отправки уроков марафона и фоновой проверки активности тарифов.</li><li><strong>Корпоративная безопасность:</strong> криптографическое шифрование API-токенов ботов и платежных ключей в базе данных (Fernet).</li></ul>",
+            tags: ["Python", "aiogram 3", "FastAPI", "SQLAlchemy", "Alembic", "APScheduler", "CryptoBot", "LavaTop", "Cryptography"],
+            buttonText: "Недоступен",
+            buttonUrl: "https://t.me/tap2sell_bot",
+            disabled: true,
+            disabledReason: "Сервер временно выключен"
         },
 
         // Карточка №4 (Pulse AI)
