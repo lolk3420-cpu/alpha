@@ -459,10 +459,10 @@
             }
 
             var steps = [
-                { text: "[02:30:01] 📩 Правка получена: «Срочно меняем логику перед запуском!»", delay: 0, cls: "wf-console-active" },
-                { text: "[02:30:02] ☕ Кофе налит, компилируем тесты и базу данных...", delay: 650, cls: "wf-console-active" },
-                { text: "[02:30:03] ⚡ Сборка: 0.18s · Автотесты: 100% Passed · Багов: 0", delay: 1350, cls: "wf-console-active" },
-                { text: "[02:30:04] ✅ Успешный деплой! Спите спокойно, бот работает 🚀", delay: 2100, cls: "wf-console-success" }
+                { text: "[02:30:01]  Правка получена", delay: 0, cls: "wf-console-active" },
+                { text: "[02:45:22]  Планировка архитектуры", delay: 650, cls: "wf-console-active" },
+                { text: "[03:16:14]  Сборка: 30min52s · Автотесты: 100% Passed · Багов: 0", delay: 1350, cls: "wf-console-active" },
+                { text: "[03:17:50]  Успешный деплой! Спите спокойно.", delay: 2100, cls: "wf-console-success" }
             ];
 
             steps.forEach(function (step, i) {
