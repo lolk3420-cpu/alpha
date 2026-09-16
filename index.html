@@ -292,7 +292,7 @@
                             <span class="workflow-number">04</span>
                             <div class="workflow-title-wrap">
                                 <h3 class="workflow-card-title">Финальный результат</h3>
-                                <p class="workflow-card-desc">Передаём готовый исходный код, разворачиваем проект на
+                                <p class="workflow-card-desc">Разворачиваем проект на
                                     сервере, подключаем мониторинг и проводим обучение</p>
                             </div>
                         </div>
@@ -305,13 +305,6 @@
                                 </div>
                                 <div class="wf-v-body">
                                     <div class="wf-deploy-grid">
-                                        <div class="wf-deploy-item">
-                                            <div class="wf-dep-top">
-                                                <span class="wf-dep-code">git clone project.git</span>
-                                                <span class="wf-dep-check">✓</span>
-                                            </div>
-                                            <span class="wf-dep-sub">Чистый исходный код и репозиторий</span>
-                                        </div>
                                         <div class="wf-deploy-item">
                                             <div class="wf-dep-top">
                                                 <span class="wf-dep-code">systemctl status bot</span>
@@ -333,61 +326,52 @@
                     </article>
                 </div>
             </section>
+            <!-- ================================================================= -->
+            <!--  FAQ — ЧАСТО ЗАДАВАЕМЫЕ ВОПРОСЫ                                    -->
+            <!--                                                                    -->
+            <!--  КАК РЕДАКТИРОВАТЬ:                                                -->
+            <!--  1. Вопрос: пишите текст внутри <span class="question">...</span>  -->
+            <!--  2. Ответ: пишите текст внутри <p class="answer">...</p>           -->
+            <!--  3. Добавить пункт: скопируйте блок <details class="FAQ-item">     -->
+            <!--  4. Открыть по умолчанию: добавьте атрибут open (<details open>)   -->
+            <!-- ================================================================= -->
             <section class="FAQ" aria-labelledby="faq-title">
                 <h2 class="section-label" id="faq-title">FAQ</h2>
+
+                <!-- Пункт 1 (открыт по умолчанию) -->
                 <details class="FAQ-item" open>
                     <summary class="div">
                         <span class="question">Как обеспечивается безопасность?</span>
-                        <span class="vector-wrapper" aria-hidden="true">
-                            <svg class="vector-2" width="16" height="16" viewBox="0 0 16 16" fill="none"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path d="M4 6L8 10L12 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
-                                    stroke-linejoin="round" />
-                            </svg>
-                        </span>
+                        <span class="vector-wrapper" aria-hidden="true"></span>
                     </summary>
-                    <p class="answer">Каждый проект получает изолированное окружение, минимальные права доступа и аудит
-                        чувствительных сценариев.</p>
-                    <div class="divider" aria-hidden="true"></div>
+                    <p class="answer">Каждый проект получает изолированное окружение, минимальные права доступа и аудит чувствительных сценариев.</p>
                 </details>
+
+                <!-- Пункт 2 -->
                 <details class="FAQ-item">
                     <summary class="div">
-                        <span class="question">Кому принадлежит код?</span>
-                        <span class="vector-wrapper" aria-hidden="true">
-                            <svg class="vector-3" width="16" height="16" viewBox="0 0 16 16" fill="none"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path d="M4 4L12 12M4 12L12 4" stroke="currentColor" stroke-width="1.5"
-                                    stroke-linecap="round" stroke-linejoin="round" />
-                            </svg>
-                        </span>
+                        <span class="question">Кому принадлежат доступы к боту и серверу?</span>
+                        <span class="vector-wrapper" aria-hidden="true"></span>
                     </summary>
-                    <div class="divider" aria-hidden="true"></div>
+                    <p class="answer">Все доступы к боту, API-ключам, серверу и базам данных передаются вам в полном объеме с инструкцией по управлению.</p>
                 </details>
+
+                <!-- Пункт 3 -->
                 <details class="FAQ-item">
                     <summary class="div">
                         <span class="question">Сколько занимает запуск?</span>
-                        <span class="vector-wrapper" aria-hidden="true">
-                            <svg class="vector-3" width="16" height="16" viewBox="0 0 16 16" fill="none"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path d="M4 4L12 12M4 12L12 4" stroke="currentColor" stroke-width="1.5"
-                                    stroke-linecap="round" stroke-linejoin="round" />
-                            </svg>
-                        </span>
+                        <span class="vector-wrapper" aria-hidden="true"></span>
                     </summary>
-                    <div class="divider" aria-hidden="true"></div>
+                    <p class="answer">В среднем разработка и развертывание занимают от 3 до 7 рабочих дней в зависимости от сложности задач.</p>
                 </details>
+
+                <!-- Пункт 4 -->
                 <details class="FAQ-item">
                     <summary class="div">
                         <span class="question">Поддерживаете проект после запуска?</span>
-                        <span class="vector-wrapper" aria-hidden="true">
-                            <svg class="vector-3" width="16" height="16" viewBox="0 0 16 16" fill="none"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path d="M4 4L12 12M4 12L12 4" stroke="currentColor" stroke-width="1.5"
-                                    stroke-linecap="round" stroke-linejoin="round" />
-                            </svg>
-                        </span>
+                        <span class="vector-wrapper" aria-hidden="true"></span>
                     </summary>
-                    <div class="divider" aria-hidden="true"></div>
+                    <p class="answer">Да, предоставляем гарантийную поддержку, мониторинг работы 24/7 и оперативные доработки при необходимости.</p>
                 </details>
             </section>
             <section class="contact-callout" aria-labelledby="contact-title">

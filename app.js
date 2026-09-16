@@ -151,15 +151,11 @@
 
     var haptic = tg && tg.HapticFeedback;
 
-    // FAQ accordion — light tap on toggle
-    document.querySelectorAll(".FAQ-item").forEach(function (details) {
-        var summary = details.querySelector("summary");
-        if (summary) {
-            summary.addEventListener("click", function () {
-                if (haptic) {
-                    haptic.impactOccurred("light");
-                }
-            });
+    // FAQ accordion — light tap on toggle (delegated for all existing and new items)
+    document.addEventListener("click", function (e) {
+        var summary = e.target.closest(".FAQ-item summary");
+        if (summary && haptic) {
+            haptic.impactOccurred("light");
         }
     });
 

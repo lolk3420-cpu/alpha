@@ -475,6 +475,8 @@
     align-self: stretch;
     width: 100%;
     flex: 0 0 auto;
+    border-bottom: 1px solid var(--bg-divider);
+    transition: border-color 0.3s ease;
 }
 
 .bot-developer .question {
@@ -512,12 +514,7 @@
 }
 
 .bot-developer .divider {
-    position: relative;
-    align-self: stretch;
-    width: 100%;
-    height: 1px;
-    background-color: var(--bg-divider);
-    transition: background-color 0.3s ease;
+    display: none;
 }
 
 .bot-developer .vector-3 {
@@ -612,7 +609,8 @@
 .bot-developer .project-card-2:focus-visible,
 .bot-developer .contact-button:focus-visible,
 .bot-developer .theme-toggle:focus-visible,
-.bot-developer .FAQ-item>.div:focus-visible {
+.bot-developer .FAQ-item > summary:focus-visible,
+.bot-developer .FAQ-item > .div:focus-visible {
     outline: 2px solid var(--focus-ring);
     outline-offset: 3px;
 }
@@ -621,36 +619,47 @@
     gap: 14px;
 }
 
-.bot-developer .FAQ-item>.div {
+.bot-developer .FAQ-item > summary,
+.bot-developer .FAQ-item > .div {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
     list-style: none;
     cursor: pointer;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
 }
 
-.bot-developer .FAQ-item>.div::-webkit-details-marker {
+.bot-developer .FAQ-item > summary::-webkit-details-marker,
+.bot-developer .FAQ-item > .div::-webkit-details-marker {
     display: none;
 }
 
-.bot-developer .FAQ-item>.div .vector-wrapper {
+.bot-developer .FAQ-item .vector-wrapper {
     display: grid;
     place-items: center;
+    width: 16px;
+    height: 16px;
+    flex-shrink: 0;
 }
 
-.bot-developer .FAQ-item>.div .vector-wrapper img,
-.bot-developer .FAQ-item>.div .vector-wrapper svg {
+.bot-developer .FAQ-item .vector-wrapper img,
+.bot-developer .FAQ-item .vector-wrapper svg {
     display: none;
 }
 
-.bot-developer .FAQ-item>.div .vector-wrapper::before {
+.bot-developer .FAQ-item .vector-wrapper::before {
     color: var(--text-primary);
     content: "+";
     font-family: "Inter-Regular", Helvetica, sans-serif;
-    font-size: 15px;
+    font-size: 16px;
     font-weight: 400;
     line-height: 16px;
     transition: color 0.3s ease;
 }
 
-.bot-developer .FAQ-item[open]>.div .vector-wrapper::before {
+.bot-developer .FAQ-item[open] .vector-wrapper::before {
     content: "−";
 }
 
@@ -1533,7 +1542,7 @@ body.modal-open {
 .bot-developer .wf-deploy-grid {
     display: flex;
     flex-direction: column;
-    gap: 5px;
+    gap: 8px;
     justify-content: center;
     height: 100%;
 }
@@ -1541,8 +1550,8 @@ body.modal-open {
 .bot-developer .wf-deploy-item {
     display: flex;
     flex-direction: column;
-    gap: 2px;
-    padding: 6px 10px;
+    gap: 3px;
+    padding: 8px 12px;
     background-color: var(--bg-toggle);
     border-radius: 10px;
     transition: background-color 0.3s ease;
