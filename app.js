@@ -153,12 +153,16 @@
         }
     });
 
-    // Contact button — medium tap
+    // Contact button — medium tap & seamless Telegram profile open
     var contactBtn = document.querySelector(".contact-button");
     if (contactBtn) {
-        contactBtn.addEventListener("click", function () {
+        contactBtn.addEventListener("click", function (e) {
             if (haptic) {
                 haptic.impactOccurred("medium");
+            }
+            if (tg && typeof tg.openTelegramLink === "function") {
+                e.preventDefault();
+                tg.openTelegramLink("https://t.me/shizukesa26");
             }
         });
     }
