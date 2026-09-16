@@ -132,17 +132,11 @@
     }
 
     /* ------------------------------------------------------------------ */
-    /*  4. MainButton ("Связаться")                                        */
+    /*  4. MainButton (отключена)                                          */
     /* ------------------------------------------------------------------ */
 
     if (tg && tg.MainButton) {
-        tg.MainButton.setText("Связаться");
-        tg.MainButton.show();
-
-        tg.onEvent("mainButtonClicked", function () {
-            // Honour the same action as the in-page contact button (mailto:)
-            window.location.href = "mailto:hello@example.com";
-        });
+        tg.MainButton.hide();
     }
 
     /* ------------------------------------------------------------------ */
