@@ -245,7 +245,7 @@
             description: "<p>SaaS‑платформа для создания автоматизированных магазинов внутри Telegram: <a href=\"https://t.me/tap2sell_bot\" target=\"_blank\" rel=\"noopener\" class=\"project-inline-link\">@tap2sell_bot</a>. Архитектура Master‑Vassal позволяет запустить собственного бота-магазина без навыков программирования — достаточно подключить токен.</p><ul class=\"modal-features-list\"><li><strong>No-code запуск:</strong> создание бота-магазина без разработки — вся настройка через интерфейс самого бота.</li><li><strong>Три формата продуктов:</strong> цифровые файлы с автовыдачей, платный доступ в закрытые каналы и группы, марафоны с отправкой контента по расписанию.</li><li><strong>Встроенная админ-панель:</strong> управление витриной, товарами и ценами прямо в Telegram без сторонних сайтов.</li><li><strong>Мульти-эквайринг:</strong> приём платежей картами, Apple Pay и криптовалютой — несколько платёжных систем одновременно.</li><li><strong>Автоматическая выдача:</strong> после оплаты бот сам отдаёт товар, открывает доступ или начинает цикл марафона.</li><li><strong>Безопасное хранение данных:</strong> токены ботов и платёжные ключи хранятся в зашифрованном виде.</li></ul>",
             tags: ["Python", "SQLAlchemy", "APScheduler", "CryptoBot", "LavaTop"],
             buttonText: "Открыть демо-бота",
-            buttonUrl: "https://t.me/tap2sell_demo_bot",
+            buttonUrl: "https://t.me/tap2sell_demo_bot?start=miniapp",
             disabled: false
         },
 
