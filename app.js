@@ -52,6 +52,11 @@
             toggle.setAttribute("aria-pressed", theme === "dark" ? "true" : "false");
         }
 
+        var themeMeta = document.querySelector('meta[name="theme-color"]');
+        if (themeMeta) {
+            themeMeta.setAttribute("content", theme === "dark" ? "#1a1a1a" : "#f5f5f3");
+        }
+
         // Mirror theme into Telegram header / background when possible
         if (tg) {
             var headerColor = theme === "dark" ? "#1a1a1a" : "#f5f5f3";
@@ -99,26 +104,33 @@
     if (tg && tg.BackButton) {
         var SCROLL_THRESHOLD = 200; // px before BackButton appears
         var backVisible = false;
+        var pastThreshold = false;
 
         updateBackButton = function () {
-            if (isModalOpen()) {
+            var shouldShow = isModalOpen() || pastThreshold;
+            if (shouldShow && !backVisible) {
                 tg.BackButton.show();
                 backVisible = true;
-                return;
-            }
-
-            var scrolled = window.scrollY || window.pageYOffset;
-
-            if (scrolled > SCROLL_THRESHOLD && !backVisible) {
-                tg.BackButton.show();
-                backVisible = true;
-            } else if (scrolled <= SCROLL_THRESHOLD && backVisible) {
+            } else if (!shouldShow && backVisible) {
                 tg.BackButton.hide();
                 backVisible = false;
             }
         };
 
-        window.addEventListener("scroll", updateBackButton, { passive: true });
+        // A 1px sentinel at SCROLL_THRESHOLD: once it leaves the top of the viewport, show BackButton
+        var sentinel = document.createElement("div");
+        sentinel.setAttribute("aria-hidden", "true");
+        sentinel.style.cssText = "position:absolute;left:0;top:" + SCROLL_THRESHOLD + "px;width:1px;height:1px;pointer-events:none;";
+        document.body.style.position = document.body.style.position || "relative";
+        document.body.appendChild(sentinel);
+
+        if ("IntersectionObserver" in window) {
+            new IntersectionObserver(function (entries) {
+                var entry = entries[0];
+                pastThreshold = !entry.isIntersecting && entry.boundingClientRect.top < 0;
+                updateBackButton();
+            }).observe(sentinel);
+        }
 
         tg.onEvent("backButtonClicked", function () {
             if (isModalOpen()) {
@@ -126,8 +138,6 @@
                 return;
             }
             window.scrollTo({ top: 0, behavior: "smooth" });
-            tg.BackButton.hide();
-            backVisible = false;
         });
     }
 
@@ -153,9 +163,8 @@
         }
     });
 
-    // Contact button — medium tap & seamless Telegram profile open
-    var contactBtn = document.querySelector(".contact-button");
-    if (contactBtn) {
+    // Contact buttons (hero + footer) — medium tap & seamless Telegram profile open
+    document.querySelectorAll(".contact-button, .hero-cta").forEach(function (contactBtn) {
         contactBtn.addEventListener("click", function (e) {
             if (haptic) {
                 haptic.impactOccurred("medium");
@@ -165,7 +174,7 @@
                 tg.openTelegramLink("https://t.me/shizukesa26");
             }
         });
-    }
+    });
 
     /* ------------------------------------------------------------------ */
     /*  6. Safe Areas → CSS custom properties                              */
@@ -261,6 +270,21 @@
             buttonUrl: "https://t.me/posterboy_bot",
             disabled: true,
             disabledReason: "Сервер временно выключен"
+        },
+
+        // Карточка №5 (IG Parser — поиск и скоринг лидов в Instagram)
+        5: {
+            title: "IG Parser",
+            category: "Парсинг · Instagram",
+            logoImg: "igparser.jpg",
+            logo: "I",
+            description: "<p>Telegram-бот для поиска лидов в Instagram. Находит авторов по ключевым словам, хэштегам и Reels, проверяет каждый профиль и выставляет лиду оценку качества от 0 до 100.</p><ul class=\"modal-features-list\"><li><strong>Три режима поиска:</strong> ключевые слова через Reels, хэштеги и аккаунты. Кандидатами становятся авторы роликов по теме.</li><li><strong>Пул аккаунтов:</strong> бот сам входит в аккаунты, проходит challenge и пережидает кулдауны. Каждый аккаунт работает через свой прокси.</li><li><strong>Многопоточный парсинг:</strong> до 10 аккаунтов параллельно, уже пройденные ключи не повторяются.</li><li><strong>Извлечение контактов:</strong> Telegram, email и ссылки из bio и taplink.</li><li><strong>Гибкий скоринг:</strong> фильтры по подписчикам и свежести, проходной балл и веса критериев настраиваются прямо в боте.</li><li><strong>Экспорт в Excel:</strong> выгрузка лидов за любой период, от последней сессии до своего диапазона дат.</li></ul>",
+
+            tags: ["Python", "aiogram", "instagrapi", "SQLite", "Excel"],
+            buttonText: "Приватный доступ",
+            buttonUrl: "",
+            disabled: true,
+            disabledReason: "Приватный проект"
         }
     };
 
@@ -393,9 +417,7 @@
         document.body.classList.add("modal-open");
 
         // Интеграция с Telegram BackButton & HapticFeedback
-        if (tg && tg.BackButton) {
-            tg.BackButton.show();
-        }
+        updateBackButton();
 
         if (haptic) {
             haptic.impactOccurred("medium");
@@ -505,5 +527,140 @@
             });
         });
     }
+
+    /* ------------------------------------------------------------------ */
+    /*  10. Motion: заголовок, появление блоков, FAQ, подсветка карточек   */
+    /*  Работает только если пользователь не просил уменьшить анимацию     */
+    /* ------------------------------------------------------------------ */
+
+    var motionOK = root.classList.contains("motion");
+
+    // Pointer spotlight on project cards (cheap: two CSS variables)
+    document.querySelectorAll(".project-card-2").forEach(function (card) {
+        card.addEventListener("pointermove", function (e) {
+            var r = card.getBoundingClientRect();
+            card.style.setProperty("--mx", (e.clientX - r.left) + "px");
+            card.style.setProperty("--my", (e.clientY - r.top) + "px");
+        });
+    });
+
+    if (!motionOK) return;
+
+    // Headline: split into words that rise from a clip mask
+    var headline = document.querySelector(".headline");
+    if (headline && !headline.classList.contains("is-split")) {
+        var words = headline.textContent.trim().split(/\s+/);
+        headline.setAttribute("aria-label", words.join(" "));
+        headline.innerHTML = words.map(function (word, i) {
+            var safe = word.replace(/&/g, "&amp;").replace(/</g, "&lt;");
+            return '<span class="w" aria-hidden="true"><span style="--i:' + i + '">' + safe + "</span></span>";
+        }).join(" ");
+        headline.classList.add("is-split");
+    }
+
+    function markReady() {
+        requestAnimationFrame(function () {
+            root.classList.add("is-ready");
+        });
+    }
+    // Wait for the display font so the words do not reflow mid-animation
+    if (document.fonts && document.fonts.ready) {
+        Promise.race([
+            document.fonts.ready,
+            new Promise(function (resolve) { setTimeout(resolve, 700); })
+        ]).then(markReady);
+    } else {
+        markReady();
+    }
+
+    // Scroll reveal
+    var revealTargets = [];
+    document.querySelectorAll(".project-card-2").forEach(function (el, i) {
+        el.style.setProperty("--d", (i * 70) + "ms");
+        revealTargets.push(el);
+    });
+    document.querySelectorAll(".workflow-card, .workflow-easter-egg, .FAQ, .contact-callout").forEach(function (el) {
+        revealTargets.push(el);
+    });
+    revealTargets.forEach(function (el) {
+        el.classList.add("reveal");
+    });
+
+    // Workflow mockups assemble themselves once the card is on screen
+    document.querySelectorAll(".workflow-card").forEach(function (card) {
+        card.querySelectorAll(".wf-msg, .wf-contract-item, .wf-feed-item, .wf-deploy-item").forEach(function (el, i) {
+            el.classList.add("wf-anim");
+            el.style.setProperty("--d", (i * 110) + "ms");
+        });
+    });
+
+    function settle(el) {
+        var delay = parseInt(el.style.getPropertyValue("--d"), 10) || 0;
+        setTimeout(function () {
+            el.classList.add("is-settled");
+        }, delay + 1000);
+    }
+
+    if ("IntersectionObserver" in window) {
+        var io = new IntersectionObserver(function (entries) {
+            entries.forEach(function (entry) {
+                if (!entry.isIntersecting) return;
+                entry.target.classList.add("is-inview");
+                settle(entry.target);
+                io.unobserve(entry.target);
+            });
+        }, { threshold: 0.12, rootMargin: "0px 0px -6% 0px" });
+
+        revealTargets.forEach(function (el) {
+            io.observe(el);
+        });
+    } else {
+        revealTargets.forEach(function (el) {
+            el.classList.add("is-inview", "is-settled");
+        });
+    }
+
+    // FAQ: animated height instead of an instant jump
+    document.querySelectorAll(".FAQ-item").forEach(function (item) {
+        var summary = item.querySelector("summary");
+        var answer = item.querySelector(".answer");
+        if (!summary || !answer || typeof answer.animate !== "function") return;
+
+        var running = null;
+        var easing = "cubic-bezier(0.16, 1, 0.3, 1)";
+
+        summary.addEventListener("click", function (e) {
+            e.preventDefault();
+            var wantClose = item.open && !item.classList.contains("is-closing");
+            if (running) running.cancel();
+
+            if (wantClose) {
+                var from = answer.offsetHeight;
+                item.classList.add("is-closing");
+                running = answer.animate(
+                    [{ height: from + "px", opacity: 1 }, { height: "0px", opacity: 0 }],
+                    { duration: 340, easing: easing }
+                );
+                running.onfinish = function () {
+                    item.open = false;
+                    item.classList.remove("is-closing");
+                    running = null;
+                };
+                running.oncancel = function () {
+                    item.classList.remove("is-closing");
+                };
+            } else {
+                item.open = true;
+                var to = answer.offsetHeight;
+                running = answer.animate(
+                    [{ height: "0px", opacity: 0 }, { height: to + "px", opacity: 1 }],
+                    { duration: 460, easing: easing }
+                );
+                running.onfinish = function () {
+                    running = null;
+                };
+            }
+        });
+    });
 })();
 

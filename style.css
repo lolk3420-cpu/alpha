@@ -5,7 +5,7 @@
     --bg-card-dark: #050505;
     --bg-card-light: #ffffff;
     --text-primary: #050505;
-    --text-secondary: #717171;
+    --text-secondary: #696969;
     --text-on-dark: #ffffff;
     --text-on-dark-secondary: #a3a3a3;
     --text-card-light: #050505;
@@ -19,7 +19,20 @@
     --glow-contact: 0px 0px 32px 12px rgba(255, 255, 255, 0.93);
     --bg-callout: #050505;
     --border-contact: #ffffff;
-    --focus-ring: #4a90e2;
+    --focus-ring: #050505;
+    --font-sans: "Onest", -apple-system, "Segoe UI", Roboto, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", Consolas, "Liberation Mono", monospace;
+    --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+    --hairline: rgba(5, 5, 5, 0.07);
+    --dot: rgba(5, 5, 5, 0.085);
+    --spot: rgba(5, 5, 5, 0.045);
+    --feat-bg: #050505;
+    --feat-fg: #ffffff;
+    --feat-fg-2: #a3a3a3;
+    --feat-chip: rgba(255, 255, 255, 0.1);
+    --live: #10b981;
+    --lift: 0 1px 2px rgba(0, 0, 0, 0.04), 0 12px 32px -14px rgba(0, 0, 0, 0.16);
+    --lift-hover: 0 2px 4px rgba(0, 0, 0, 0.05), 0 22px 44px -16px rgba(0, 0, 0, 0.24);
 }
 
 [data-theme="dark"] {
@@ -41,7 +54,16 @@
     --glow-contact: 0px 0px 32px 12px rgba(255, 255, 255, 0.15);
     --bg-callout: #2a2a2a;
     --border-contact: #555555;
-    --focus-ring: #6aabf5;
+    --focus-ring: #f0f0f0;
+    --hairline: rgba(255, 255, 255, 0.07);
+    --dot: rgba(255, 255, 255, 0.06);
+    --spot: rgba(255, 255, 255, 0.05);
+    --feat-bg: #050505;
+    --feat-fg: #f0f0f0;
+    --feat-fg-2: #8a8a8a;
+    --feat-chip: rgba(255, 255, 255, 0.09);
+    --lift: 0 1px 2px rgba(0, 0, 0, 0.2), 0 12px 32px -14px rgba(0, 0, 0, 0.5);
+    --lift-hover: 0 2px 4px rgba(0, 0, 0, 0.25), 0 22px 44px -16px rgba(0, 0, 0, 0.6);
 }
 
 /* ── Root Container ───────────────────────────────────────────── */
@@ -149,7 +171,7 @@
     position: relative;
     width: fit-content;
     margin-top: -1px;
-    font-family: "Inter-Regular", Helvetica;
+    font-family: var(--font-sans);
     font-weight: 400;
     color: var(--text-secondary);
     font-size: 11px;
@@ -162,7 +184,7 @@
 .bot-developer .index {
     position: relative;
     width: fit-content;
-    font-family: "Inter-Regular", Helvetica;
+    font-family: var(--font-sans);
     font-weight: 400;
     color: var(--text-secondary);
     font-size: 11px;
@@ -187,7 +209,7 @@
     position: relative;
     width: fit-content;
     margin-top: -1px;
-    font-family: "Inter-Regular", Helvetica;
+    font-family: var(--font-sans);
     font-weight: 400;
     color: var(--text-secondary);
     font-size: 13px;
@@ -199,7 +221,7 @@
 .bot-developer .headline {
     position: relative;
     align-self: stretch;
-    font-family: "Inter-Light", Helvetica;
+    font-family: var(--font-sans);
     font-weight: 300;
     color: var(--text-primary);
     font-size: 42px;
@@ -212,7 +234,7 @@
     position: relative;
     width: 100%;
     max-width: 310px;
-    font-family: "Inter-Light", Helvetica;
+    font-family: var(--font-sans);
     font-weight: 300;
     color: var(--text-secondary);
     font-size: 15px;
@@ -236,7 +258,7 @@
     position: relative;
     width: fit-content;
     margin-top: -1px;
-    font-family: "Inter-Medium", Helvetica;
+    font-family: var(--font-sans);
     font-weight: 500;
     color: var(--text-secondary);
     font-size: 11px;
@@ -302,7 +324,7 @@
 .bot-developer .logo-mark {
     position: relative;
     width: fit-content;
-    font-family: "Inter-Medium", Helvetica;
+    font-family: var(--font-sans);
     font-weight: 500;
     color: var(--text-primary);
     font-size: 24px;
@@ -339,7 +361,7 @@
     position: relative;
     align-self: stretch;
     margin-top: -1px;
-    font-family: "Inter-Medium", Helvetica;
+    font-family: var(--font-sans);
     font-weight: 500;
     color: var(--text-on-dark);
     font-size: 18px;
@@ -351,7 +373,7 @@
 .bot-developer .category {
     position: relative;
     align-self: stretch;
-    font-family: "Inter-Regular", Helvetica;
+    font-family: var(--font-sans);
     font-weight: 400;
     color: var(--text-on-dark-secondary);
     font-size: 11px;
@@ -414,7 +436,7 @@
 .bot-developer .logo-mark-2 {
     position: relative;
     width: fit-content;
-    font-family: "Inter-Medium", Helvetica;
+    font-family: var(--font-sans);
     font-weight: 500;
     color: var(--text-logo-alt);
     font-size: 24px;
@@ -433,7 +455,7 @@
     position: relative;
     align-self: stretch;
     margin-top: -1px;
-    font-family: "Inter-Medium", Helvetica;
+    font-family: var(--font-sans);
     font-weight: 500;
     color: var(--text-card-light);
     font-size: 18px;
@@ -445,7 +467,7 @@
 .bot-developer .category-2 {
     position: relative;
     align-self: stretch;
-    font-family: "Inter-Regular", Helvetica;
+    font-family: var(--font-sans);
     font-weight: 400;
     color: var(--text-card-light-secondary);
     font-size: 11px;
@@ -484,7 +506,7 @@
     width: auto;
     max-width: calc(100% - 32px);
     margin-top: -1px;
-    font-family: "Inter-Regular", Helvetica;
+    font-family: var(--font-sans);
     font-weight: 400;
     color: var(--text-primary);
     font-size: 15px;
@@ -504,7 +526,7 @@
 .bot-developer .answer {
     position: relative;
     align-self: stretch;
-    font-family: "Inter-Regular", Helvetica;
+    font-family: var(--font-sans);
     font-weight: 400;
     color: var(--text-secondary);
     font-size: 13px;
@@ -544,7 +566,7 @@
 .bot-developer .prompt {
     position: relative;
     width: 260px;
-    font-family: "Inter-Light", Helvetica;
+    font-family: var(--font-sans);
     font-weight: 300;
     color: var(--text-on-dark);
     font-size: 20px;
@@ -574,7 +596,7 @@
 .bot-developer .label {
     position: relative;
     width: fit-content;
-    font-family: "Inter-Medium", Helvetica;
+    font-family: var(--font-sans);
     font-weight: 500;
     color: var(--text-on-dark);
     font-size: 15px;
@@ -652,7 +674,7 @@
 .bot-developer .FAQ-item .vector-wrapper::before {
     color: var(--text-primary);
     content: "+";
-    font-family: "Inter-Regular", Helvetica, sans-serif;
+    font-family: var(--font-sans);
     font-size: 16px;
     font-weight: 400;
     line-height: 16px;
@@ -774,7 +796,7 @@ body.modal-open {
 }
 
 .project-modal .modal-logo-mark {
-    font-family: "Inter-Medium", Helvetica, sans-serif;
+    font-family: var(--font-sans);
     font-size: 22px;
     font-weight: 500;
     display: flex;
@@ -794,7 +816,7 @@ body.modal-open {
 
 .project-modal .project-inline-link {
     color: var(--text-card-light);
-    font-family: "Inter-Medium", Helvetica, sans-serif;
+    font-family: var(--font-sans);
     font-weight: 500;
     text-decoration: underline;
     text-underline-offset: 3px;
@@ -813,7 +835,7 @@ body.modal-open {
 
 .project-modal .modal-title {
     margin: 0;
-    font-family: "Inter-Medium", Helvetica, sans-serif;
+    font-family: var(--font-sans);
     font-size: 20px;
     font-weight: 500;
     color: var(--text-card-light);
@@ -823,7 +845,7 @@ body.modal-open {
 
 .project-modal .modal-category {
     margin: 0;
-    font-family: "Inter-Regular", Helvetica, sans-serif;
+    font-family: var(--font-sans);
     font-size: 13px;
     color: var(--text-card-light-secondary);
     transition: color 0.3s ease;
@@ -836,7 +858,7 @@ body.modal-open {
 }
 
 .project-modal .modal-section-label {
-    font-family: "Inter-Medium", Helvetica, sans-serif;
+    font-family: var(--font-sans);
     font-size: 11px;
     font-weight: 500;
     letter-spacing: 0.2px;
@@ -851,7 +873,7 @@ body.modal-open {
 
 .project-modal .modal-description {
     margin: 0;
-    font-family: "Inter-Light", Helvetica, sans-serif;
+    font-family: var(--font-sans);
     font-size: 14px;
     line-height: 1.65;
     color: var(--text-card-light);
@@ -892,7 +914,7 @@ body.modal-open {
 }
 
 .project-modal .modal-features-list li strong {
-    font-family: "Inter-Medium", Helvetica, sans-serif;
+    font-family: var(--font-sans);
     font-weight: 500;
     color: var(--text-card-light);
 }
@@ -910,7 +932,7 @@ body.modal-open {
     border-radius: 10px;
     background-color: var(--bg-toggle);
     color: var(--text-secondary);
-    font-family: "Inter-Medium", Helvetica, sans-serif;
+    font-family: var(--font-sans);
     font-size: 12px;
     font-weight: 500;
     transition: background-color 0.3s ease, color 0.3s ease;
@@ -931,7 +953,7 @@ body.modal-open {
     gap: 10px;
     padding: 10px 14px;
     border-radius: 14px;
-    font-family: "Inter-Regular", Helvetica, sans-serif;
+    font-family: var(--font-sans);
     font-size: 13px;
     line-height: 1.4;
     background-color: rgba(245, 158, 11, 0.12);
@@ -976,7 +998,7 @@ body.modal-open {
     border-radius: 16px;
     background-color: var(--bg-callout);
     color: var(--text-on-dark);
-    font-family: "Inter-Medium", Helvetica, sans-serif;
+    font-family: var(--font-sans);
     font-size: 14px;
     font-weight: 500;
     text-decoration: none;
@@ -1088,7 +1110,7 @@ body.modal-open {
 }
 
 .bot-developer .workflow-number {
-    font-family: "Inter-Medium", Helvetica, sans-serif;
+    font-family: var(--font-sans);
     font-size: 13px;
     font-weight: 500;
     color: var(--text-secondary);
@@ -1109,7 +1131,7 @@ body.modal-open {
 }
 
 .bot-developer .workflow-card-title {
-    font-family: "Inter-Medium", Helvetica, sans-serif;
+    font-family: var(--font-sans);
     font-size: 18px;
     font-weight: 500;
     color: var(--text-primary);
@@ -1119,7 +1141,7 @@ body.modal-open {
 }
 
 .bot-developer .workflow-card-desc {
-    font-family: "Inter-Regular", Helvetica, sans-serif;
+    font-family: var(--font-sans);
     font-size: 13px;
     line-height: 1.45;
     color: var(--text-secondary);
@@ -1150,7 +1172,7 @@ body.modal-open {
     padding: 12px 14px;
     box-sizing: border-box;
     justify-content: space-between;
-    font-family: "Inter-Regular", Helvetica, sans-serif;
+    font-family: var(--font-sans);
 }
 
 .bot-developer .wf-v-topbar {
@@ -1177,7 +1199,7 @@ body.modal-open {
 .bot-developer .wf-dot-purple { background-color: #8b5cf6; }
 
 .bot-developer .wf-v-title {
-    font-family: "Inter-Medium", Helvetica, sans-serif;
+    font-family: var(--font-sans);
     font-weight: 500;
     color: var(--text-primary);
     flex: 1;
@@ -1261,7 +1283,7 @@ body.modal-open {
     display: flex;
     flex-direction: column;
     gap: 2px;
-    font-size: 10.5px;
+    font-size: 11px;
 }
 
 .bot-developer .wf-check {
@@ -1302,7 +1324,7 @@ body.modal-open {
 }
 
 .bot-developer .wf-c-label {
-    font-size: 10.5px;
+    font-size: 11px;
     font-weight: 500;
     color: var(--text-primary);
     white-space: nowrap;
@@ -1411,7 +1433,7 @@ body.modal-open {
     background-color: var(--bg-card-light);
     padding: 4px 10px;
     border-radius: 999px;
-    font-size: 10.5px;
+    font-size: 11px;
     font-weight: 600;
     letter-spacing: 0.5px;
     color: var(--text-primary);
@@ -1440,7 +1462,7 @@ body.modal-open {
 }
 
 .bot-developer .wf-egg-title {
-    font-family: "Inter-Medium", Helvetica, sans-serif;
+    font-family: var(--font-sans);
     font-size: 16px;
     font-weight: 500;
     color: var(--text-primary);
@@ -1449,7 +1471,7 @@ body.modal-open {
 }
 
 .bot-developer .wf-egg-desc {
-    font-family: "Inter-Regular", Helvetica, sans-serif;
+    font-family: var(--font-sans);
     font-size: 13px;
     line-height: 1.4;
     color: var(--text-secondary);
@@ -1467,7 +1489,7 @@ body.modal-open {
     border-radius: 16px;
     background-color: var(--bg-callout);
     color: var(--text-on-dark);
-    font-family: "Inter-Medium", Helvetica, sans-serif;
+    font-family: var(--font-sans);
     font-size: 13.5px;
     font-weight: 500;
     border: 1px solid var(--border-contact);
@@ -1503,7 +1525,7 @@ body.modal-open {
 .bot-developer .wf-egg-console {
     background-color: #0b0f19;
     color: #a3e635;
-    font-family: "Consolas", "Courier New", monospace;
+    font-family: var(--font-mono);
     font-size: 11.5px;
     padding: 10px 12px;
     border-radius: 14px;
@@ -1525,7 +1547,7 @@ body.modal-open {
 }
 
 .bot-developer .wf-console-idle {
-    color: #64748b;
+    color: #7c8799;
     font-style: italic;
 }
 
@@ -1564,8 +1586,8 @@ body.modal-open {
 }
 
 .bot-developer .wf-dep-code {
-    font-family: "Consolas", "Courier New", monospace;
-    font-size: 10.5px;
+    font-family: var(--font-mono);
+    font-size: 11px;
     font-weight: 500;
     color: var(--text-primary);
     transition: color 0.3s ease;
@@ -1573,7 +1595,7 @@ body.modal-open {
 
 .bot-developer .wf-dep-check {
     color: #10b981;
-    font-size: 10.5px;
+    font-size: 11px;
     font-weight: 600;
 }
 
@@ -1593,4 +1615,1063 @@ body.modal-open {
 @keyframes pulseDot {
     0%, 100% { opacity: 1; transform: scale(1); }
     50% { opacity: 0.35; transform: scale(0.96); }
+}
+/* ══════════════════════════════════════════════════════════════════
+   v2 layer — solid & alive. Палитра прежняя, меняется форма и движение.
+   ══════════════════════════════════════════════════════════════════ */
+
+html,
+body {
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    font-family: var(--font-sans);
+    transition: background-color 0.3s ease;
+}
+
+::selection {
+    background-color: var(--text-primary);
+    color: var(--bg-primary);
+}
+
+html {
+    scrollbar-width: thin;
+    scrollbar-color: var(--bg-divider) transparent;
+}
+
+/* Root: dotted field that fades out under the hero */
+.bot-developer {
+    align-items: stretch;
+    overflow-x: clip;
+}
+
+.bot-developer::before {
+    content: "";
+    position: absolute;
+    inset: 0 0 auto 0;
+    height: 620px;
+    background-image: radial-gradient(var(--dot) 1px, transparent 1.3px);
+    background-size: 18px 18px;
+    -webkit-mask-image: radial-gradient(ellipse 90% 100% at 50% 0%, #000 25%, transparent 72%);
+    mask-image: radial-gradient(ellipse 90% 100% at 50% 0%, #000 25%, transparent 72%);
+    pointer-events: none;
+}
+
+.bot-developer .main-page-content {
+    gap: 76px;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* ── Hero ─────────────────────────────────────────────────────── */
+
+.bot-developer .introduction {
+    gap: 56px;
+}
+
+.bot-developer .theme-toggle {
+    width: 42px;
+    height: 42px;
+    background-color: var(--bg-card-light);
+    box-shadow: inset 0 0 0 1px var(--hairline), 0 6px 16px -10px rgba(0, 0, 0, 0.25);
+    transition: background-color 0.3s ease, transform 0.25s var(--ease-out);
+}
+
+.bot-developer .theme-toggle:active {
+    transform: scale(0.92);
+}
+
+.bot-developer .theme-toggle svg {
+    animation: icon-in 0.6s var(--ease-out);
+}
+
+.bot-developer .availability {
+    gap: 10px;
+    padding: 9px 14px 9px 12px;
+    border-radius: 999px;
+    background-color: var(--bg-card-light);
+    box-shadow: inset 0 0 0 1px var(--hairline);
+    transition: background-color 0.3s ease;
+}
+
+.bot-developer .status {
+    width: 7px;
+    height: 7px;
+    background-color: var(--live);
+}
+
+.bot-developer .status::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    background-color: var(--live);
+    animation: ping 2.4s var(--ease-out) infinite;
+}
+
+.bot-developer .text-wrapper {
+    margin-top: 0;
+    font-weight: 500;
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    color: var(--text-primary);
+}
+
+.bot-developer .hero-copy {
+    gap: 20px;
+}
+
+.bot-developer .headline {
+    font-weight: 500;
+    font-size: clamp(40px, 11.4vw, 66px);
+    line-height: 1.02;
+    letter-spacing: -0.045em;
+    text-wrap: balance;
+}
+
+.bot-developer .headline .w {
+    display: inline-block;
+    overflow: hidden;
+    vertical-align: top;
+    padding-bottom: 0.1em;
+    margin-bottom: -0.1em;
+}
+
+.bot-developer .headline .w > span {
+    display: inline-block;
+}
+
+.bot-developer .p {
+    max-width: 34ch;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.5;
+    letter-spacing: -0.005em;
+    text-wrap: pretty;
+}
+
+
+/* ── Section labels: label + hairline rule ─────────────────────── */
+
+.bot-developer .section-label {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    width: 100%;
+    margin-top: 0;
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    color: var(--text-secondary);
+}
+
+.bot-developer .section-label::after {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background-color: var(--bg-divider);
+    transition: background-color 0.3s ease;
+}
+
+.bot-developer .projects,
+.bot-developer .workflow {
+    gap: 22px;
+}
+
+/* ── Project grid ─────────────────────────────────────────────── */
+
+.bot-developer .project-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+}
+
+.bot-developer .project-card-2 {
+    width: auto;
+    height: 196px;
+    padding: 16px;
+    border-radius: 26px;
+    isolation: isolate;
+    box-shadow: inset 0 0 0 1px var(--hairline), var(--lift);
+    transition: background-color 0.3s ease, box-shadow 0.4s var(--ease-out), transform 0.5s var(--ease-out);
+}
+
+/* Pointer spotlight */
+.bot-developer .project-card-2::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background: radial-gradient(260px circle at var(--mx, 50%) var(--my, -20%), var(--spot), transparent 65%);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+.bot-developer .project-card-2:hover {
+    transform: translateY(-4px);
+    box-shadow: inset 0 0 0 1px var(--hairline), var(--lift-hover);
+}
+
+.bot-developer .project-card-2:hover::before {
+    opacity: 1;
+}
+
+.bot-developer .project-card-2:active {
+    transform: scale(0.97);
+    transition-duration: 0.15s;
+}
+
+.bot-developer .project-card-2 .logo-mark-wrapper {
+    width: 56px;
+    height: 56px;
+    border-radius: 17px;
+    overflow: visible;
+    transition: background-color 0.3s ease, transform 0.6s var(--ease-out);
+}
+
+.bot-developer .project-card-2 .logo-mark-img {
+    border-radius: inherit;
+}
+
+.bot-developer .project-card-2:hover .logo-mark-wrapper {
+    transform: scale(1.05) rotate(-3deg);
+}
+
+.bot-developer .logo-mark-2 {
+    font-weight: 600;
+    font-size: 22px;
+    letter-spacing: -0.03em;
+}
+
+.bot-developer .project-card-2 .vector-wrapper {
+    width: 32px;
+    height: 32px;
+    border-radius: 999px;
+    background-color: var(--bg-toggle);
+    color: var(--text-card-light);
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.5s var(--ease-out);
+}
+
+.bot-developer .project-card-2 .vector {
+    transition: transform 0.5s var(--ease-out);
+}
+
+.bot-developer .project-card-2:hover .vector-wrapper {
+    background-color: var(--text-card-light);
+    color: var(--bg-card-light);
+}
+
+.bot-developer .project-card-2:hover .vector {
+    transform: translate(1px, -1px) scale(1.1);
+}
+
+.bot-developer .project-information {
+    gap: 4px;
+}
+
+.bot-developer .title-2 {
+    margin-top: 0;
+    font-weight: 500;
+    font-size: 17px;
+    letter-spacing: -0.02em;
+}
+
+.bot-developer .category-2 {
+    font-size: 12px;
+    line-height: 1.35;
+}
+
+/* Featured card — inverted, spans the row */
+.bot-developer .project-card-2.is-featured {
+    grid-column: 1 / -1;
+    height: 232px;
+    padding: 20px;
+    background-color: var(--feat-bg);
+    color: var(--feat-fg);
+    background-image:
+        radial-gradient(120% 90% at 100% 0%, rgba(255, 255, 255, 0.13), transparent 55%),
+        radial-gradient(rgba(255, 255, 255, 0.07) 1px, transparent 1.3px);
+    background-size: auto, 16px 16px;
+    box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.06), var(--lift);
+}
+
+.bot-developer .project-card-2.is-featured::before {
+    background: radial-gradient(300px circle at var(--mx, 50%) var(--my, -20%), rgba(255, 255, 255, 0.1), transparent 65%);
+}
+
+.bot-developer .project-card-2.is-featured:hover {
+    box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.1), var(--lift-hover);
+}
+
+.bot-developer .project-card-2.is-featured .logo-mark-wrapper {
+    width: 68px;
+    height: 68px;
+    border-radius: 20px;
+}
+
+.bot-developer .project-card-2.is-featured .title-2 {
+    color: var(--feat-fg);
+    font-size: 30px;
+    letter-spacing: -0.035em;
+}
+
+.bot-developer .project-card-2.is-featured .category-2 {
+    color: var(--feat-fg-2);
+    font-size: 13px;
+}
+
+.bot-developer .project-card-2.is-featured .vector-wrapper {
+    width: 40px;
+    height: 40px;
+    background-color: var(--feat-chip);
+    color: var(--feat-fg);
+}
+
+.bot-developer .project-card-2.is-featured:hover .vector-wrapper {
+    background-color: var(--feat-fg);
+    color: var(--feat-bg);
+}
+
+/* Live badge on the logo, like the online dot on a Telegram avatar */
+.bot-developer .card-live {
+    position: absolute;
+    right: -3px;
+    bottom: -3px;
+    width: 16px;
+    height: 16px;
+    border-radius: 999px;
+    background-color: var(--live);
+    box-shadow: 0 0 0 3px var(--feat-bg);
+}
+
+.bot-developer .card-live::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    background-color: var(--live);
+    animation: ping 2.4s var(--ease-out) infinite;
+}
+
+/* ── Workflow ─────────────────────────────────────────────────── */
+
+.bot-developer .workflow-grid {
+    gap: 12px;
+}
+
+.bot-developer .workflow-card {
+    padding: 18px;
+    border-radius: 26px;
+    gap: 18px;
+    box-shadow: inset 0 0 0 1px var(--hairline), var(--lift);
+}
+
+.bot-developer .workflow-card:hover,
+[data-theme="dark"] .bot-developer .workflow-card:hover {
+    box-shadow: inset 0 0 0 1px var(--hairline), var(--lift-hover);
+}
+
+.bot-developer .workflow-number {
+    display: grid;
+    place-items: center;
+    width: 30px;
+    height: 30px;
+    padding: 0;
+    margin-top: 0;
+    border-radius: 10px;
+    font-size: 12px;
+    font-variant-numeric: tabular-nums;
+    transition: background-color 0.6s var(--ease-out), color 0.6s var(--ease-out);
+}
+
+.bot-developer .workflow-card.is-inview .workflow-number {
+    background-color: var(--text-primary);
+    color: var(--bg-primary);
+}
+
+.bot-developer .workflow-title-wrap {
+    gap: 5px;
+    padding-top: 4px;
+}
+
+.bot-developer .workflow-card-title {
+    font-size: 17px;
+    letter-spacing: -0.02em;
+}
+
+.bot-developer .workflow-card-desc {
+    font-size: 13.5px;
+    line-height: 1.5;
+    max-width: 44ch;
+}
+
+.bot-developer .workflow-visual.aspect-16-9 {
+    border-radius: 16px;
+    border-color: var(--hairline);
+    background-image: radial-gradient(var(--dot) 1px, transparent 1.3px);
+    background-size: 14px 14px;
+}
+
+.bot-developer .wf-v-topbar {
+    border-bottom-color: var(--hairline);
+}
+
+.bot-developer .wf-msg-user,
+.bot-developer .wf-contract-item,
+.bot-developer .wf-feed-item,
+.bot-developer .wf-deploy-item {
+    background-color: var(--bg-card-light);
+    box-shadow: inset 0 0 0 1px var(--hairline), 0 4px 10px -8px rgba(0, 0, 0, 0.2);
+}
+
+.bot-developer .wf-check {
+    display: inline-flex;
+    vertical-align: -1px;
+    margin-right: 4px;
+}
+
+.bot-developer .wf-c-icon {
+    display: grid;
+    place-items: center;
+    flex-shrink: 0;
+    width: 24px;
+    height: 24px;
+    border-radius: 7px;
+    background-color: var(--bg-toggle);
+    color: var(--text-primary);
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.bot-developer .wf-contract-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.bot-developer .wf-contract-item {
+    min-width: 0;
+    gap: 8px;
+    padding: 6px 8px;
+}
+
+.bot-developer .wf-c-icon svg {
+    width: 14px;
+    height: 14px;
+}
+
+/* Interactive box: same solid card language, no dashed outline */
+.bot-developer .workflow-easter-egg,
+[data-theme="dark"] .bot-developer .workflow-easter-egg {
+    padding: 18px;
+    border-radius: 26px;
+    background: var(--bg-card-light);
+    border: 0;
+    box-shadow: inset 0 0 0 1px var(--hairline), var(--lift);
+}
+
+.bot-developer .wf-egg-pill {
+    background-color: var(--bg-toggle);
+    box-shadow: none;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+}
+
+.bot-developer .wf-egg-title {
+    font-size: 19px;
+    letter-spacing: -0.02em;
+}
+
+.bot-developer .wf-egg-btn {
+    padding: 14px 18px;
+    border-radius: 14px;
+    border: 0;
+    box-shadow: 0 10px 22px -12px rgba(0, 0, 0, 0.55);
+    transition: transform 0.4s var(--ease-out), opacity 0.2s ease, background-color 0.3s ease;
+}
+
+.bot-developer .wf-egg-btn:not(:disabled):hover .wf-egg-btn-icon {
+    animation: zap 0.5s var(--ease-out);
+}
+
+.bot-developer .wf-egg-console {
+    background-color: #050505;
+    font-size: 11px;
+    border-radius: 12px;
+    padding: 12px 14px;
+}
+
+.bot-developer .wf-console-line {
+    animation: line-in 0.45s var(--ease-out);
+}
+
+.bot-developer .wf-console-line:last-child::after {
+    content: "";
+    display: inline-block;
+    width: 6px;
+    height: 11px;
+    margin-left: 6px;
+    vertical-align: -1px;
+    background-color: currentColor;
+    animation: caret 1.05s steps(1) infinite;
+}
+
+/* ── FAQ ──────────────────────────────────────────────────────── */
+
+.bot-developer .FAQ {
+    gap: 6px;
+}
+
+.bot-developer .FAQ-item {
+    gap: 0;
+    padding: 0;
+}
+
+.bot-developer .FAQ-item > summary {
+    gap: 16px;
+    padding: 20px 0;
+}
+
+.bot-developer .question {
+    font-size: 16px;
+    line-height: 1.35;
+    letter-spacing: -0.01em;
+    transition: color 0.3s ease, transform 0.4s var(--ease-out);
+}
+
+.bot-developer .FAQ-item > summary:hover .question {
+    transform: translateX(3px);
+}
+
+.bot-developer .FAQ-item .vector-wrapper {
+    position: relative;
+    width: 30px;
+    height: 30px;
+    border-radius: 999px;
+    background-color: var(--bg-toggle);
+    color: var(--text-primary);
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.5s var(--ease-out);
+}
+
+.bot-developer .FAQ-item .vector-wrapper::before,
+.bot-developer .FAQ-item .vector-wrapper::after,
+.bot-developer .FAQ-item[open] .vector-wrapper::before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 11px;
+    height: 1.5px;
+    margin: -0.75px 0 0 -5.5px;
+    border-radius: 2px;
+    background-color: currentColor;
+    transition: transform 0.45s var(--ease-out);
+}
+
+.bot-developer .FAQ-item .vector-wrapper::after {
+    transform: rotate(90deg);
+}
+
+.bot-developer .FAQ-item[open] .vector-wrapper {
+    background-color: var(--text-primary);
+    color: var(--bg-primary);
+    transform: rotate(180deg);
+}
+
+.bot-developer .FAQ-item[open] .vector-wrapper::after {
+    transform: rotate(0deg);
+}
+
+.bot-developer .answer {
+    max-width: 62ch;
+    padding: 0 44px 22px 0;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+/* ── Contact: eclipse ─────────────────────────────────────────── */
+
+.bot-developer .contact-callout {
+    height: auto;
+    gap: 32px;
+    padding: 64px 24px 60px;
+    background-image:
+        radial-gradient(70% 60% at 50% 115%, rgba(255, 255, 255, 0.16), transparent 70%),
+        radial-gradient(rgba(255, 255, 255, 0.06) 1px, transparent 1.3px);
+    background-size: auto, 16px 16px;
+    box-shadow: var(--lift);
+}
+
+.bot-developer .prompt {
+    width: auto;
+    max-width: 290px;
+    font-weight: 400;
+    font-size: 25px;
+    line-height: 1.18;
+    letter-spacing: -0.03em;
+    text-wrap: balance;
+}
+
+.bot-developer .contact-orbit {
+    position: relative;
+    display: inline-grid;
+    place-items: center;
+}
+
+.bot-developer .eclipse {
+    position: absolute;
+    inset: -4px;
+    border-radius: 999px;
+    overflow: hidden;
+    filter: blur(5px);
+    opacity: 0.95;
+    pointer-events: none;
+}
+
+.bot-developer .eclipse::before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 120%;
+    aspect-ratio: 1;
+    translate: -50% -50%;
+    background: conic-gradient(from 0deg,
+            transparent 0deg,
+            rgba(255, 255, 255, 0.95) 50deg,
+            transparent 120deg,
+            transparent 180deg,
+            rgba(255, 255, 255, 0.55) 235deg,
+            transparent 300deg);
+    animation: eclipse-spin 6s linear infinite;
+}
+
+.bot-developer .contact-button {
+    z-index: 1;
+    gap: 12px;
+    padding: 18px 30px 18px 34px;
+    border-color: rgba(255, 255, 255, 0.85);
+    animation: corona 4.8s ease-in-out infinite;
+    transition: transform 0.5s var(--ease-out), background-color 0.3s ease, border-color 0.3s ease;
+}
+
+[data-theme="dark"] .bot-developer .contact-button {
+    border-color: rgba(255, 255, 255, 0.35);
+    animation-name: corona-dim;
+}
+
+.bot-developer .contact-button:hover {
+    transform: scale(1.03);
+}
+
+.bot-developer .contact-button:active {
+    transform: scale(0.97);
+    transition-duration: 0.15s;
+}
+
+.bot-developer .contact-button .vector-4 {
+    transition: transform 0.5s var(--ease-out);
+}
+
+.bot-developer .contact-button:hover .vector-4 {
+    transform: translate(2px, -2px);
+}
+
+/* ── Modal refinements ────────────────────────────────────────── */
+
+.project-modal .modal-dialog {
+    border: 0;
+    box-shadow: inset 0 1px 0 var(--hairline), 0 -20px 60px rgba(0, 0, 0, 0.28);
+    padding-top: 28px;
+}
+
+.project-modal .modal-title {
+    font-size: 22px;
+    letter-spacing: -0.025em;
+}
+
+.project-modal .modal-description {
+    font-weight: 400;
+    font-size: 14.5px;
+}
+
+.project-modal .modal-tag {
+    border-radius: 999px;
+    box-shadow: inset 0 0 0 1px var(--hairline);
+}
+
+.project-modal .modal-action-btn {
+    padding: 16px 20px;
+    border: 0;
+}
+
+.project-modal.is-active .modal-body > *,
+.project-modal.is-active .modal-footer {
+    animation: sheet-in 0.6s var(--ease-out) both;
+}
+
+.project-modal.is-active .modal-body > :nth-child(2) { animation-delay: 0.04s; }
+.project-modal.is-active .modal-body > :nth-child(3) { animation-delay: 0.08s; }
+.project-modal.is-active .modal-body > :nth-child(4) { animation-delay: 0.12s; }
+.project-modal.is-active .modal-footer { animation-delay: 0.14s; }
+
+/* ── Focus ────────────────────────────────────────────────────── */
+
+.bot-developer .project-card-2:focus-visible,
+.bot-developer .contact-button:focus-visible,
+.bot-developer .theme-toggle:focus-visible,
+.bot-developer .wf-egg-btn:focus-visible,
+.bot-developer .FAQ-item > summary:focus-visible,
+.project-modal .modal-action-btn:focus-visible,
+.project-modal .modal-close-btn:focus-visible {
+    outline: 2px solid var(--focus-ring) !important;
+    outline-offset: 3px;
+}
+
+/* ── Motion (only when JS adds .motion and the user allows it) ── */
+
+.motion .bot-developer .headline .w > span {
+    transform: translateY(108%);
+}
+
+.motion.is-ready .bot-developer .headline .w > span {
+    transform: none;
+    transition: transform 1.1s var(--ease-out);
+    transition-delay: calc(var(--i, 0) * 60ms + 80ms);
+}
+
+.motion .bot-developer .hero-copy .p,
+.motion .bot-developer .hero-copy .hero-cta,
+.motion .bot-developer .hero-bar {
+    opacity: 0;
+    transform: translateY(10px);
+    filter: blur(4px);
+}
+
+.motion.is-ready .bot-developer .hero-copy .p,
+.motion.is-ready .bot-developer .hero-copy .hero-cta,
+.motion.is-ready .bot-developer .hero-bar {
+    opacity: 1;
+    transform: none;
+    filter: none;
+    transition: opacity 0.9s var(--ease-out), transform 1s var(--ease-out), filter 0.9s var(--ease-out);
+}
+
+.motion.is-ready .bot-developer .hero-copy .p { transition-delay: 0.45s; }
+.motion.is-ready .bot-developer .hero-copy .hero-cta { transition-delay: 0.6s; }
+
+.motion .bot-developer .reveal {
+    opacity: 0;
+    transform: translateY(18px);
+}
+
+.motion .bot-developer .reveal.is-inview {
+    opacity: 1;
+    transform: none;
+    transition: opacity 0.8s var(--ease-out), transform 1s var(--ease-out),
+        background-color 0.3s ease, box-shadow 0.4s var(--ease-out);
+    transition-delay: var(--d, 0ms);
+}
+
+/* after the entrance, the card's own hover/press transforms take over */
+.motion .bot-developer .reveal.is-inview.is-settled {
+    transition: background-color 0.3s ease, box-shadow 0.4s var(--ease-out), transform 0.5s var(--ease-out);
+}
+
+.motion .bot-developer .project-card-2.is-settled:hover {
+    transform: translateY(-4px);
+}
+
+.motion .bot-developer .project-card-2.is-settled:active {
+    transform: scale(0.97);
+    transition-duration: 0.15s;
+}
+
+.motion .bot-developer .workflow-card .wf-anim {
+    opacity: 0;
+    transform: translateY(8px) scale(0.98);
+}
+
+.motion .bot-developer .workflow-card.is-inview .wf-anim {
+    opacity: 1;
+    transform: none;
+    transition: opacity 0.6s var(--ease-out), transform 0.8s var(--ease-out), background-color 0.3s ease;
+    transition-delay: calc(var(--d, 0ms) + 250ms);
+}
+
+.motion:not(.is-ready) .bot-developer .headline:not(.is-split) {
+    opacity: 0;
+}
+
+.bot-developer .answer {
+    overflow: hidden;
+}
+
+.bot-developer .FAQ-item[open].is-closing .vector-wrapper {
+    background-color: var(--bg-toggle);
+    color: var(--text-primary);
+    transform: none;
+}
+
+.bot-developer .FAQ-item[open].is-closing .vector-wrapper::after {
+    transform: rotate(90deg);
+}
+
+/* ══════════════════════════════════════════════════════════════════
+   Taste pass: real section headings, hero CTA, one accent (green),
+   one dot field (hero only), interactive controls are pills.
+   Radius system: containers 26px, inner surfaces 16/10px, controls pill.
+   ══════════════════════════════════════════════════════════════════ */
+
+/* Hero */
+.bot-developer .headline {
+    font-size: clamp(34px, 9.4vw, 60px);
+    line-height: 1.04;
+}
+
+.bot-developer .hero-copy {
+    gap: 18px;
+}
+
+.bot-developer .hero-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 10px;
+    padding: 15px 22px 15px 24px;
+    border-radius: 999px;
+    background-color: var(--text-primary);
+    color: var(--bg-primary);
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 1;
+    white-space: nowrap;
+    box-shadow: 0 12px 24px -14px rgba(5, 5, 5, 0.6);
+    -webkit-tap-highlight-color: transparent;
+    transition: transform 0.5s var(--ease-out), background-color 0.3s ease, color 0.3s ease, box-shadow 0.4s var(--ease-out);
+}
+
+.bot-developer .hero-cta:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 18px 30px -14px rgba(5, 5, 5, 0.65);
+}
+
+.bot-developer .hero-cta:active {
+    transform: scale(0.97);
+    transition-duration: 0.15s;
+}
+
+.bot-developer .hero-cta-icon {
+    transition: transform 0.5s var(--ease-out);
+}
+
+.bot-developer .hero-cta:hover .hero-cta-icon {
+    transform: translate(2px, -2px);
+}
+
+.bot-developer .hero-cta:focus-visible {
+    outline: 2px solid var(--focus-ring);
+    outline-offset: 3px;
+}
+
+[data-theme="dark"] .bot-developer .hero-cta {
+    box-shadow: none;
+}
+
+/* Section headings: the label is the heading, sentence case, no rule */
+.bot-developer .section-label {
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 1.15;
+    letter-spacing: -0.03em;
+    color: var(--text-primary);
+    white-space: normal;
+}
+
+.bot-developer .section-label::after {
+    content: none;
+}
+
+.bot-developer .projects,
+.bot-developer .workflow {
+    gap: 18px;
+}
+
+.bot-developer .FAQ {
+    gap: 4px;
+}
+
+.bot-developer .FAQ > .section-label {
+    margin-bottom: 6px;
+}
+
+/* One dot field on the page: the hero. Everything else stays clean. */
+.bot-developer .project-card-2.is-featured {
+    background-image: radial-gradient(120% 90% at 100% 0%, rgba(255, 255, 255, 0.14), transparent 55%);
+    background-size: auto;
+}
+
+.bot-developer .contact-callout {
+    background-image: radial-gradient(70% 60% at 50% 115%, rgba(255, 255, 255, 0.16), transparent 70%);
+    background-size: auto;
+}
+
+.bot-developer .workflow-visual.aspect-16-9 {
+    background-image: none;
+}
+
+/* Color lock: green is the only accent. Mockups use ink + green. */
+.bot-developer .wf-msg-bot,
+[data-theme="dark"] .bot-developer .wf-msg-bot {
+    background-color: var(--text-primary);
+    color: var(--bg-primary);
+    border: 0;
+}
+
+.bot-developer .wf-msg-bot .wf-msg-title {
+    color: inherit;
+}
+
+.bot-developer .wf-msg-bot .wf-check {
+    color: var(--live);
+}
+
+.bot-developer .wf-feed-item.live .wf-feed-status {
+    background-color: var(--text-primary);
+    color: var(--bg-primary);
+}
+
+.bot-developer .wf-feed-item.done .wf-feed-status,
+.bot-developer .wf-badge-success {
+    background-color: rgba(16, 185, 129, 0.14);
+    color: #0b7a55;
+}
+
+[data-theme="dark"] .bot-developer .wf-feed-item.done .wf-feed-status,
+[data-theme="dark"] .bot-developer .wf-badge-success {
+    color: #34d399;
+}
+
+.bot-developer .wf-dep-check {
+    color: #0b7a55;
+}
+
+[data-theme="dark"] .bot-developer .wf-dep-check {
+    color: #34d399;
+}
+
+.bot-developer .wf-egg-pill-dot {
+    background-color: var(--live);
+    animation: none;
+}
+
+.bot-developer .wf-console-active {
+    color: #d4d4d4;
+}
+
+.bot-developer .wf-v-topbar {
+    gap: 10px;
+}
+
+/* Controls are pills */
+.bot-developer .wf-egg-btn,
+.project-modal .modal-action-btn {
+    border-radius: 999px;
+}
+
+.project-modal .modal-action-btn {
+    padding: 16px 22px 16px 24px;
+}
+
+.project-modal .modal-disabled-notice {
+    border-radius: 16px;
+}
+
+/* ── Keyframes ────────────────────────────────────────────────── */
+
+@keyframes ping {
+    0% { transform: scale(1); opacity: 0.55; }
+    70%, 100% { transform: scale(2.6); opacity: 0; }
+}
+
+@keyframes icon-in {
+    from { transform: rotate(-80deg) scale(0.5); opacity: 0; }
+}
+
+@keyframes eclipse-spin {
+    to { rotate: 360deg; }
+}
+
+@keyframes corona {
+    0%, 100% { box-shadow: 0 0 26px 6px rgba(255, 255, 255, 0.5); }
+    50% { box-shadow: 0 0 40px 12px rgba(255, 255, 255, 0.85); }
+}
+
+@keyframes corona-dim {
+    0%, 100% { box-shadow: 0 0 24px 4px rgba(255, 255, 255, 0.08); }
+    50% { box-shadow: 0 0 36px 10px rgba(255, 255, 255, 0.16); }
+}
+
+@keyframes caret {
+    50% { opacity: 0; }
+}
+
+@keyframes line-in {
+    from { opacity: 0; transform: translateX(-6px); }
+}
+
+@keyframes zap {
+    40% { transform: rotate(-14deg) scale(1.2); }
+}
+
+@keyframes sheet-in {
+    from { opacity: 0; transform: translateY(12px); }
+}
+
+@media (min-width: 600px) {
+    .bot-developer .main-page-content {
+        padding-top: 48px;
+    }
+    .bot-developer .project-card-2 {
+        height: 210px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation: none !important;
+        transition-duration: 0.01ms !important;
+        transition-delay: 0ms !important;
+    }
+}
+
+/* Step 1 mockup: keep the generated spec bubble inside the 16:9 frame */
+.bot-developer .wf-v1 .wf-v-body {
+    gap: 5px;
+    padding-top: 5px;
+}
+
+.bot-developer .wf-v1 .wf-msg {
+    padding: 6px 10px;
+    line-height: 1.3;
+}
+
+.bot-developer .wf-v1 .wf-checklist {
+    font-size: 10.5px;
+    line-height: 1.3;
+    gap: 1px;
+}
+
+@media (max-width: 380px) {
+    .bot-developer .wf-v1.wf-visual-canvas {
+        padding: 10px 12px;
+    }
+    .bot-developer .wf-v1 .wf-v-topbar {
+        padding-bottom: 6px;
+    }
+    .bot-developer .wf-v1 .wf-msg {
+        font-size: 11px;
+        padding: 5px 9px;
+    }
+    .bot-developer .wf-v1 .wf-v-body {
+        gap: 4px;
+        padding-top: 4px;
+    }
 }

@@ -5,101 +5,61 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <script src="https://telegram.org/js/telegram-web-app.js"></script>
+    <meta name="theme-color" content="#f5f5f3">
+    <link rel="preload" href="fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="stylesheet" href="globals.css">
     <link rel="stylesheet" href="style.css">
-    <title>Bot Developer — Product Builder</title>
+    <title>Bot Developer - Product Builder</title>
+    <script>
+        // Включает анимации до первой отрисовки (без них страница полностью рабочая)
+        (function (d) {
+            if (window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+            d.classList.add("motion");
+            setTimeout(function () { d.classList.add("is-ready"); }, 3000);
+        })(document.documentElement);
+    </script>
 </head>
 
 <body>
     <div class="bot-developer">
         <main class="main-page-content">
             <section class="introduction" aria-labelledby="hero-title">
-                <div class="div">
-                    <button class="theme-toggle" type="button" aria-label="Переключить цветовую тему"
-                        aria-pressed="false">
-                        <svg class="icon-moon" aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none"
-                            stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
-                        </svg>
-                        <svg class="icon-sun" aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none"
-                            stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                            <circle cx="12" cy="12" r="5" />
-                            <line x1="12" y1="1" x2="12" y2="3" />
-                            <line x1="12" y1="21" x2="12" y2="23" />
-                            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />
-                            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
-                            <line x1="1" y1="12" x2="3" y2="12" />
-                            <line x1="21" y1="12" x2="23" y2="12" />
-                            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />
-                            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
-                        </svg>
-                    </button>
+                <div class="div hero-bar">
                     <p class="availability" aria-label="Доступен для работы">
                         <span class="status" aria-hidden="true"></span>
                         <span class="text-wrapper">ДОСТУПЕН ДЛЯ РАБОТЫ</span>
                     </p>
+                    <button class="theme-toggle" type="button" aria-label="Переключить цветовую тему"
+                        aria-pressed="false">
+                        <svg class="icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454l0 .008"/></svg>
+                        <svg class="icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 12a4 4 0 1 0 8 0a4 4 0 1 0 -8 0"/><path d="M3 12h1m8 -9v1m8 8h1m-9 8v1m-6.4 -15.4l.7 .7m12.1 -.7l-.7 .7m0 11.4l.7 .7m-12.1 -.7l-.7 .7"/></svg>
+                    </button>
                 </div>
                 <div class="hero-copy">
-                    <p class="eyebrow">БОТ‑РАЗРАБОТЧИК / СОЗДАТЕЛЬ ПРОДУКТОВ</p>
                     <h1 class="headline" id="hero-title">Создаю ботов, которые работают на бизнес.</h1>
                     <p class="p">Проектирую понятные Telegram‑продукты - от первой идеи до стабильного запуска.</p>
+                    <a class="hero-cta" href="https://t.me/shizukesa26" target="_blank" rel="noopener"
+                        aria-label="Написать в Telegram">
+                        <span>Связаться</span>
+                        <svg class="hero-cta-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 7l-10 10"/><path d="M8 7l9 0l0 9"/></svg>
+                    </a>
                 </div>
             </section>
             <section class="projects" aria-labelledby="projects-title">
                 <div class="div">
-                    <h2 class="section-label" id="projects-title">ИЗБРАННЫЕ ПРОЕКТЫ</h2>
+                    <h2 class="section-label" id="projects-title">Избранные проекты</h2>
                 </div>
+                <!-- Порядок карточек на странице задаётся здесь; описание — в app.js по data-project -->
                 <div class="project-grid">
-                    <a class="project-card-2" href="#" data-project="1"
-                        aria-label="Проект ModerGod — Модерация, Telegram">
-                        <div class="card-header">
-                            <div class="logo-mark-wrapper" aria-hidden="true">
-                                <span class="logo-mark-2">M</span>
-                            </div>
-                            <span class="vector-wrapper" aria-hidden="true">
-                                <svg class="vector" width="16" height="16" viewBox="0 0 16 16" fill="none"
-                                    xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M4 12L12 4M12 4H6M12 4V10" stroke="currentColor" stroke-width="1.5"
-                                        stroke-linecap="round" stroke-linejoin="round" />
-                                </svg>
-                            </span>
-                        </div>
-                        <div class="project-information">
-                            <h3 class="title-2">ModerGod</h3>
-                            <p class="category-2">Модерация · Telegram</p>
-                        </div>
-                    </a>
-                    <a class="project-card-2" href="#" data-project="2"
-                        aria-label="Проект Marinera — Парсинг, Lead Generation">
-                        <div class="card-header">
-                            <div class="logo-mark-wrapper" aria-hidden="true">
-                                <img class="logo-mark-img" src="marinera.jpg" alt="Marinera logo" />
-                            </div>
-                            <span class="vector-wrapper" aria-hidden="true">
-                                <svg class="img" width="16" height="16" viewBox="0 0 16 16" fill="none"
-                                    xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M4 12L12 4M12 4H6M12 4V10" stroke="currentColor" stroke-width="1.5"
-                                        stroke-linecap="round" stroke-linejoin="round" />
-                                </svg>
-                            </span>
-                        </div>
-                        <div class="project-information">
-                            <h3 class="title-2">Marinera</h3>
-                            <p class="category-2">Парсинг · Lead Generation</p>
-                        </div>
-                    </a>
-                    <a class="project-card-2" href="#" data-project="3"
+                    <a class="project-card-2 is-featured" href="#" data-project="3"
                         aria-label="Проект Tap2Sell — E-commerce, Конструктор ботов">
                         <div class="card-header">
                             <div class="logo-mark-wrapper" aria-hidden="true">
-                                <img class="logo-mark-img" src="tap2sell.jpg" alt="Tap2Sell logo" />
+                                <img class="logo-mark-img" src="tap2sell.jpg" alt="" />
+                                <span class="card-live" aria-hidden="true"></span>
                             </div>
                             <span class="vector-wrapper" aria-hidden="true">
-                                <svg class="vector" width="16" height="16" viewBox="0 0 16 16" fill="none"
-                                    xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M4 12L12 4M12 4H6M12 4V10" stroke="currentColor" stroke-width="1.5"
-                                        stroke-linecap="round" stroke-linejoin="round" />
-                                </svg>
+                                <svg class="vector" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 7l-10 10"/><path d="M8 7l9 0l0 9"/></svg>
                             </span>
                         </div>
                         <div class="project-information">
@@ -107,18 +67,59 @@
                             <p class="category-2">E-commerce · Конструктор ботов</p>
                         </div>
                     </a>
+                    <a class="project-card-2" href="#" data-project="2"
+                        aria-label="Проект Marinera — Парсинг, Lead Generation">
+                        <div class="card-header">
+                            <div class="logo-mark-wrapper" aria-hidden="true">
+                                <img class="logo-mark-img" src="marinera.jpg" alt="" />
+                            </div>
+                            <span class="vector-wrapper" aria-hidden="true">
+                                <svg class="vector" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 7l-10 10"/><path d="M8 7l9 0l0 9"/></svg>
+                            </span>
+                        </div>
+                        <div class="project-information">
+                            <h3 class="title-2">Marinera</h3>
+                            <p class="category-2">Парсинг · Lead Generation</p>
+                        </div>
+                    </a>
+                    <a class="project-card-2" href="#" data-project="5"
+                        aria-label="Проект IG Parser — Парсинг, Instagram">
+                        <div class="card-header">
+                            <div class="logo-mark-wrapper" aria-hidden="true">
+                                <img class="logo-mark-img" src="igparser.jpg" alt="" />
+                            </div>
+                            <span class="vector-wrapper" aria-hidden="true">
+                                <svg class="vector" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 7l-10 10"/><path d="M8 7l9 0l0 9"/></svg>
+                            </span>
+                        </div>
+                        <div class="project-information">
+                            <h3 class="title-2">IG Parser</h3>
+                            <p class="category-2">Парсинг · Instagram</p>
+                        </div>
+                    </a>
+                    <a class="project-card-2" href="#" data-project="1"
+                        aria-label="Проект ModerGod — Модерация, Telegram">
+                        <div class="card-header">
+                            <div class="logo-mark-wrapper" aria-hidden="true">
+                                <span class="logo-mark-2">M</span>
+                            </div>
+                            <span class="vector-wrapper" aria-hidden="true">
+                                <svg class="vector" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 7l-10 10"/><path d="M8 7l9 0l0 9"/></svg>
+                            </span>
+                        </div>
+                        <div class="project-information">
+                            <h3 class="title-2">ModerGod</h3>
+                            <p class="category-2">Модерация · Telegram</p>
+                        </div>
+                    </a>
                     <a class="project-card-2" href="#" data-project="4"
                         aria-label="Проект PosterBoy — Постинг, Forum Topics">
                         <div class="card-header">
                             <div class="logo-mark-wrapper" aria-hidden="true">
-                                <img class="logo-mark-img" src="posterboy.jpg" alt="PosterBoy logo" />
+                                <img class="logo-mark-img" src="posterboy.jpg" alt="" />
                             </div>
                             <span class="vector-wrapper" aria-hidden="true">
-                                <svg class="img" width="16" height="16" viewBox="0 0 16 16" fill="none"
-                                    xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M4 12L12 4M12 4H6M12 4V10" stroke="currentColor" stroke-width="1.5"
-                                        stroke-linecap="round" stroke-linejoin="round" />
-                                </svg>
+                                <svg class="vector" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 7l-10 10"/><path d="M8 7l9 0l0 9"/></svg>
                             </span>
                         </div>
                         <div class="project-information">
@@ -130,7 +131,7 @@
             </section>
             <section class="workflow" aria-labelledby="workflow-title">
                 <div class="div">
-                    <h2 class="section-label" id="workflow-title">ПРИНЦИП РАБОТЫ</h2>
+                    <h2 class="section-label" id="workflow-title">Принцип работы</h2>
                 </div>
                 <div class="workflow-grid">
                     <!-- Шаг 1: Согласование -->
@@ -145,7 +146,6 @@
                         <div class="workflow-visual aspect-16-9" aria-hidden="true">
                             <div class="wf-visual-canvas wf-v1">
                                 <div class="wf-v-topbar">
-                                    <span class="wf-v-dot wf-dot-green"></span>
                                     <span class="wf-v-title">Диалог согласования & ТЗ</span>
                                     <span class="wf-v-badge">Обсуждение</span>
                                 </div>
@@ -156,9 +156,9 @@
                                     <div class="wf-msg wf-msg-bot">
                                         <div class="wf-msg-title">Сформировано ТЗ:</div>
                                         <ul class="wf-checklist">
-                                            <li><span class="wf-check">✓</span> Сценарии диалогов & валидация</li>
-                                            <li><span class="wf-check">✓</span> Архитектура, БД и Webhook</li>
-                                            <li><span class="wf-check">✓</span> Сроки и критерии приемки</li>
+                                            <li><span class="wf-check" aria-hidden="true"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5l10 -10"/></svg></span> Сценарии диалогов & валидация</li>
+                                            <li><span class="wf-check" aria-hidden="true"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5l10 -10"/></svg></span> Архитектура, БД и Webhook</li>
+                                            <li><span class="wf-check" aria-hidden="true"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5l10 -10"/></svg></span> Сроки и критерии приемки</li>
                                         </ul>
                                     </div>
                                 </div>
@@ -179,35 +179,34 @@
                         <div class="workflow-visual aspect-16-9" aria-hidden="true">
                             <div class="wf-visual-canvas wf-v2">
                                 <div class="wf-v-topbar">
-                                    <span class="wf-v-dot wf-dot-blue"></span>
                                     <span class="wf-v-title">Условия сотрудничества</span>
                                     <span class="wf-v-badge">Гарантия</span>
                                 </div>
                                 <div class="wf-v-body">
                                     <div class="wf-contract-grid">
                                         <div class="wf-contract-item">
-                                            <div class="wf-c-icon">📑</div>
+                                            <div class="wf-c-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3v4a1 1 0 0 0 1 1h4"/><path d="M17 21h-10a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2h7l5 5v11a2 2 0 0 1 -2 2"/><path d="M9 9l1 0"/><path d="M9 13l6 0"/><path d="M9 17l6 0"/></svg></div>
                                             <div class="wf-c-text">
                                                 <span class="wf-c-label">Договор & NDA</span>
                                                 <span class="wf-c-val">Полная защита условий</span>
                                             </div>
                                         </div>
                                         <div class="wf-contract-item">
-                                            <div class="wf-c-icon">⏱️</div>
+                                            <div class="wf-c-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12a9 9 0 1 0 18 0a9 9 0 1 0 -18 0"/><path d="M12 12l3 2"/><path d="M12 7v5"/></svg></div>
                                             <div class="wf-c-text">
                                                 <span class="wf-c-label">Сроки спринтов</span>
                                                 <span class="wf-c-val">Четкий график этапов</span>
                                             </div>
                                         </div>
                                         <div class="wf-contract-item">
-                                            <div class="wf-c-icon">💳</div>
+                                            <div class="wf-c-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8a3 3 0 0 1 3 -3h12a3 3 0 0 1 3 3v8a3 3 0 0 1 -3 3h-12a3 3 0 0 1 -3 -3l0 -8"/><path d="M3 10l18 0"/><path d="M7 15l.01 0"/><path d="M11 15l2 0"/></svg></div>
                                             <div class="wf-c-text">
                                                 <span class="wf-c-label">Оплата</span>
                                                 <span class="wf-c-val">Безопасный расчет</span>
                                             </div>
                                         </div>
                                         <div class="wf-contract-item">
-                                            <div class="wf-c-icon">🛡️</div>
+                                            <div class="wf-c-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11.46 20.846a12 12 0 0 1 -7.96 -14.846a12 12 0 0 0 8.5 -3a12 12 0 0 0 8.5 3a12 12 0 0 1 -.09 7.06"/><path d="M15 19l2 2l4 -4"/></svg></div>
                                             <div class="wf-c-text">
                                                 <span class="wf-c-label">Поддержка</span>
                                                 <span class="wf-c-val">Гарантийный период</span>
@@ -232,7 +231,6 @@
                         <div class="workflow-visual aspect-16-9" aria-hidden="true">
                             <div class="wf-visual-canvas wf-v3">
                                 <div class="wf-v-topbar">
-                                    <span class="wf-v-dot wf-dot-purple"></span>
                                     <span class="wf-v-title">Живой трекинг разработки</span>
                                     <span class="wf-v-badge">Live Доступ</span>
                                 </div>
@@ -266,17 +264,12 @@
                                 <span class="wf-egg-pill-dot"></span>
                                 <span>ИНТЕРАКТИВНЫЙ ТЕСТ</span>
                             </div>
-                            <span class="wf-egg-hint">Проверьте реакцию</span>
                         </div>
                         <div class="wf-egg-content">
                             <h4 class="wf-egg-title">Срочная правка?</h4>
                             <p class="wf-egg-desc">Никаких срывов дедлайнов и паники. Проверьте готовность системы:</p>
                             <button type="button" class="wf-egg-btn" id="workflow-interactive-btn">
-                                <svg class="wf-egg-btn-icon" width="16" height="16" viewBox="0 0 24 24" fill="none"
-                                    stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                    stroke-linejoin="round">
-                                    <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
-                                </svg>
+                                <svg class="wf-egg-btn-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13 3l0 7l6 0l-8 11l0 -7l-6 0l8 -11"/></svg>
                                 <span id="workflow-btn-label">Симулировать правку</span>
                             </button>
                             <div class="wf-egg-console" id="workflow-console" aria-live="polite">
@@ -299,7 +292,6 @@
                         <div class="workflow-visual aspect-16-9" aria-hidden="true">
                             <div class="wf-visual-canvas wf-v4">
                                 <div class="wf-v-topbar">
-                                    <span class="wf-v-dot wf-dot-green"></span>
                                     <span class="wf-v-title">Продакшн запуск & Сервер</span>
                                     <span class="wf-v-badge wf-badge-success">Online 99.9%</span>
                                 </div>
@@ -348,7 +340,17 @@
                         и тестится на прочность к кибератакам.</p>
                 </details>
 
-                <!-- Пункт 2 (бывший 3) -->
+                <!-- Пункт 2 -->
+                <details class="FAQ-item">
+                    <summary class="div">
+                        <span class="question">Кому принадлежат код, доступы к серверу и админ-панели бота?</span>
+                        <span class="vector-wrapper" aria-hidden="true"></span>
+                    </summary>
+                    <p class="answer">Все доступы к админ-панели бота передаются вам, мы же обеспечиваем поддержку и
+                        работоспособность бота, поэтому код остается у нас (если иное не оговорено заранее). </p>
+                </details>
+
+                <!-- Пункт 3 -->
                 <details class="FAQ-item">
                     <summary class="div">
                         <span class="question">Сколько занимает запуск?</span>
@@ -358,7 +360,7 @@
                         от сложности задач.</p>
                 </details>
 
-                <!-- Пункт 3 (бывший 4) -->
+                <!-- Пункт 4 -->
                 <details class="FAQ-item">
                     <summary class="div">
                         <span class="question">Поддерживаете проект после запуска?</span>
@@ -369,27 +371,7 @@
                         остаемся на связи и готовы помочь в решении любых вопросов, касающихся вашего проекта.</p>
                 </details>
 
-                <!-- Пункт 4 (бывший 2) -->
-                <details class="FAQ-item">
-                    <summary class="div">
-                        <span class="question">Кому принадлежат код, доступы к серверу и админ-панели бота?</span>
-                        <span class="vector-wrapper" aria-hidden="true"></span>
-                    </summary>
-                    <p class="answer">Все доступы к админ-панели бота передаются вам, мы же обеспечиваем поддержку и
-                        работоспособность бота, поэтому код остается у нас (если иное не оговорено заранее).</p>
-                </details>
-
-                <!-- Пункт 5 (бывший 6) -->
-                <details class="FAQ-item">
-                    <summary class="div">
-                        <span class="question">Что, если я хочу полностью владеть своим проектом?</span>
-                        <span class="vector-wrapper" aria-hidden="true"></span>
-                    </summary>
-                    <p class="answer">Мы открыты к диалогу: передача полного исходного кода, перенос проекта на ваши
-                        серверы и полное отчуждение прав возможны по индивидуальной договоренности.</p>
-                </details>
-
-                <!-- Пункт 6 (бывший 5) -->
+                <!-- Пункт 5 -->
                 <details class="FAQ-item">
                     <summary class="div">
                         <span class="question">Где находится наш бот?</span>
@@ -400,7 +382,17 @@
                         сторону.</p>
                 </details>
 
-                <!-- Пункт 7 (бывший 7) -->
+                <!-- Пункт 6 -->
+                <details class="FAQ-item">
+                    <summary class="div">
+                        <span class="question">Что, если я хочу полностью владеть своим проектом?</span>
+                        <span class="vector-wrapper" aria-hidden="true"></span>
+                    </summary>
+                    <p class="answer">Мы открыты к диалогу: передача полного исходного кода, перенос проекта на ваши
+                        серверы и полное отчуждение прав возможны по индивидуальной договоренности.</p>
+                </details>
+
+                <!-- Пункт 7 -->
                 <details class="FAQ-item">
                     <summary class="div">
                         <span class="question">Что, если я хочу прекратить сотрудничество?</span>
@@ -412,16 +404,15 @@
             </section>
             <section class="contact-callout" aria-labelledby="contact-title">
                 <h2 class="prompt" id="contact-title">Есть идея для следующего проекта?</h2>
-                <a class="contact-button" href="https://t.me/shizukesa26" target="_blank" rel="noopener" aria-label="Связаться в Telegram">
-                    <span class="label">Связаться</span>
-                    <span class="vector-wrapper" aria-hidden="true">
-                        <svg class="vector-4" width="16" height="16" viewBox="0 0 16 16" fill="none"
-                            xmlns="http://www.w3.org/2000/svg">
-                            <path d="M4 12L12 4M12 4H6M12 4V10" stroke="currentColor" stroke-width="1.5"
-                                stroke-linecap="round" stroke-linejoin="round" />
-                        </svg>
-                    </span>
-                </a>
+                <div class="contact-orbit">
+                    <span class="eclipse" aria-hidden="true"></span>
+                    <a class="contact-button" href="https://t.me/shizukesa26" target="_blank" rel="noopener" aria-label="Написать в Telegram">
+                        <span class="label">Связаться</span>
+                        <span class="vector-wrapper" aria-hidden="true">
+                            <svg class="vector-4" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 7l-10 10"/><path d="M8 7l9 0l0 9"/></svg>
+                        </span>
+                    </a>
+                </div>
             </section>
         </main>
 
@@ -430,11 +421,7 @@
             <div class="modal-backdrop" data-close-modal></div>
             <div class="modal-dialog">
                 <button class="modal-close-btn" type="button" aria-label="Закрыть" data-close-modal>
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                        stroke-linecap="round" stroke-linejoin="round">
-                        <line x1="18" y1="6" x2="6" y2="18"></line>
-                        <line x1="6" y1="6" x2="18" y2="18"></line>
-                    </svg>
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 6l-12 12"/><path d="M6 6l12 12"/></svg>
                 </button>
                 <div class="modal-header">
                     <div class="modal-logo-wrapper">
@@ -454,21 +441,13 @@
                 <div class="modal-footer" id="modal-footer">
                     <div class="modal-disabled-notice" id="modal-disabled-notice" style="display: none;">
                         <span class="modal-notice-icon" aria-hidden="true">
-                            <svg class="modal-notice-svg" width="16" height="16" viewBox="0 0 24 24"
-                                fill="currentColor">
-                                <path fill-rule="evenodd" clip-rule="evenodd"
-                                    d="M10.286 3.86a2 2 0 013.428 0l8.113 14.198A2 2 0 0120.113 21H3.887a2 2 0 01-1.714-2.942L10.286 3.86zM12 9a1 1 0 00-1 1v4a1 1 0 102 0v-4a1 1 0 00-1-1zm0 8a1.25 1.25 0 100-2.5 1.25 1.25 0 000 2.5z" />
-                            </svg>
+                            <svg class="modal-notice-svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 1.67c.955 0 1.845 .467 2.39 1.247l.105 .16l8.114 13.548a2.914 2.914 0 0 1 -2.307 4.363l-.195 .008h-16.225a2.914 2.914 0 0 1 -2.582 -4.2l.099 -.185l8.11 -13.538a2.914 2.914 0 0 1 2.491 -1.403zm.01 13.33l-.127 .007a1 1 0 0 0 0 1.986l.117 .007l.127 -.007a1 1 0 0 0 0 -1.986l-.117 -.007zm-.01 -7a1 1 0 0 0 -.993 .883l-.007 .117v4l.007 .117a1 1 0 0 0 1.986 0l.007 -.117v-4l-.007 -.117a1 1 0 0 0 -.993 -.883z"/></svg>
                         </span>
                         <span class="modal-notice-text" id="modal-notice-text"></span>
                     </div>
                     <a class="modal-action-btn" id="modal-action-btn" href="#" target="_blank" rel="noopener">
                         <span id="modal-btn-text">Открыть проект</span>
-                        <svg class="modal-btn-icon" width="16" height="16" viewBox="0 0 16 16" fill="none"
-                            xmlns="http://www.w3.org/2000/svg">
-                            <path d="M4 12L12 4M12 4H6M12 4V10" stroke="currentColor" stroke-width="1.5"
-                                stroke-linecap="round" stroke-linejoin="round" />
-                        </svg>
+                        <svg class="modal-btn-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 7l-10 10"/><path d="M8 7l9 0l0 9"/></svg>
                     </a>
                 </div>
             </div>
